@@ -6,9 +6,9 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
-module.exports = (db) => {
+module.exports = (db) => {        // see users.js to do this
   router.get("/", (req, res) => {
     let query = `SELECT * FROM widgets`;
     console.log(query);
