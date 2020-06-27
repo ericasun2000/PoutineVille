@@ -1,10 +1,10 @@
-module.exports = (db) => {
+module.exports = db => {
     const getUsers = () => {
         const query = {
             text: `SELECT * FROM users;`,
         };
 
-        return db.query(query).then((result) => result.rows);
+        return db.query(query).then(result => result.rows);
     };
 
     const addUser = (name, email, password) => {
@@ -13,11 +13,20 @@ module.exports = (db) => {
             values: [name],
         };
 
-        return db.query(query).then((result) => result.rows);
+        return db.query(query).then(result => result.rows);
+    };
+
+    const getWidgets = () => {
+      const query = {
+        text: `SELECT * FROM widgets`,
+      };
+
+      return db.query(query).then(result => result.rows);
     };
 
     return {
         getUsers,
         addUser,
+        getWidgets
     };
 };
