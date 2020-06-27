@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS orders CASCADE;
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY NOT NULL,
+  telephone VARCHAR(255) NOT NULL,
+  submitted_at TIMESTAMP DEFAULT NOW(),
+  completed_at TIMESTAMP
+);
