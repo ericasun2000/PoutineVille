@@ -8,7 +8,7 @@ INSERT INTO dishes (name,description,price,image_url) VALUES ('Chicken Inferno P
 
 INSERT INTO dishes (name,description,price,image_url) VALUES ('Philly Cheesesteak  Poutine','Fresh hand-cut french fries,gravy,and Quebec cheese curds,flat-iron steak,mushrooms,caramelized onions,cheese sauce',14,'./assests/poutine.jpg');
 
-INSERT INTO dishes (name,description,price,image_url) VALUES ('Mac N\'Cheeseburger Poutine','Kraft Dinner macroni,prime ground beef,cheese sauce,sliced pickles,and crushed ketchup chips on a bed of crispy fries',14,'./assests/poutine.jpg');
+INSERT INTO dishes (name,description,price,image_url) VALUES ('Mac N''Cheeseburger Poutine','Kraft Dinner macroni,prime ground beef,cheese sauce,sliced pickles,and crushed ketchup chips on a bed of crispy fries',14,'./assests/poutine.jpg');
 
 INSERT INTO dishes (name,description,price,image_url) VALUES ('KD cool and the buffalo Ranch Poutine','Kraft Dinner macroni,fried chicken bites,buffalo sauce,Cool Ranch Doritos,and green onions,on a bed of crispy fries',14,'./assests/poutine.jpg');
 
