@@ -24,9 +24,26 @@ module.exports = db => {
       return db.query(query).then(result => result.rows);
     };
 
+    const getDishes = () => {
+      const query = {
+        text: `SELECT * FROM dishes`,
+      };
+
+      return db.query(query).then(result => result.rows);
+    };
+
+    const addDish = (dish_id, order_id, quantity, price) => {
+      const query = {
+        text: `INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES (dish_id, order_id, quantity, price) RETURNING *`,
+      };
+      return db.query(query).then(result => result.rows);
+    }
+
     return {
         getUsers,
         addUser,
-        getWidgets
+        getWidgets,
+        getDishes,
+        addDish
     };
 };
