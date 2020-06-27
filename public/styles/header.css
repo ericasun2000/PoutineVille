@@ -1,0 +1,58 @@
+header{
+    background-image: url('../assets/ori-background-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+
+    height: 100vh;
+    color: white;
+}
+
+nav > a.navbar-brand{
+    color: white !important;
+    font-family: 'Ruthie', cursive;
+    font-size: 3rem;
+}
+
+.header-text{
+    position:absolute;
+    top:35%;
+    width:100%;
+    text-align:center;
+    letter-spacing:0.25rem;
+    padding: 10px;
+}
+
+.header-address{
+    font-family: 'Mate', serif;
+}
+
+.header-slogan{
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.header-btn, .order-form__btn{
+    background-color:#B8010A;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Rhodium Libre', serif;
+    padding: 0.7rem;
+    margin-top: 3rem;
+    outline: none;
+    /* border: none; */
+}
+
+.header-btn:hover{
+    background-color:#7C0A02;
+    /* box-shadow: 0 0.3em 0.7em rgba(50, 50, 50, 0.5); */
+
+}
+
+@media(max-width:568px){
+    header{
+      background-attachment:scroll;
+    }
+  }
+  
