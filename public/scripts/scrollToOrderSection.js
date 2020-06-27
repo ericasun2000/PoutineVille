@@ -4,6 +4,6 @@ $(() => {
     headerBtn.click(function () {
         $([document.documentElement, document.body]).animate({
             scrollTop: $("#order-section").offset().top
-        }, 2000);
+        }, 1500);
     })
 });
