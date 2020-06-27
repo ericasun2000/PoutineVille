@@ -6,11 +6,11 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
-module.exports = (db) => {
+module.exports = ({ getUsers, addUser }) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
+    getUsers()
       .then(data => {
         const users = data.rows;
         res.json({ users });
