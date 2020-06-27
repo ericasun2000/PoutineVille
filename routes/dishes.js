@@ -20,4 +20,6 @@ module.exports = ({ getDishes, addDish }) => {
       })
       .catch(err => console.log(err));
   });
+
+  return router;
 }
