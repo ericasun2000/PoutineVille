@@ -11,15 +11,24 @@ const router = express.Router();
 module.exports = ({ getUsers, addUser }) => {
   router.get("/", (req, res) => {
     getUsers()
-      .then(data => {
-        const users = data.rows;
+      .then(users => {
         res.json({ users });
       })
       .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
+        res.status(500).json({ error: err.message });
       });
   });
+
+  router.post("/", (req, res) => {
+    const {name, email, password} = req.body;
+    addUser(name, email, password)
+      .then(user => {
+        res.json(user);
+      })
+      .catch(err => console.log(err));
+  });
+
+  // redirect on client side (ajax)
+
   return router;
 };
