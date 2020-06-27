@@ -12,6 +12,8 @@
 
     <!-- Customzed CSS -->
     <link rel="stylesheet" href="styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="styles/menu.css" type="text/css" />
+
 
     <title>Fooedie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -23,124 +25,43 @@
             <a class="navbar-brand" href="/">Foodie</a>
         </nav>
         <div class="header-text">
-            <span class="restaurant-address">123 Pandora Street - Montreal QC - (514) 777 7890</span>
+            <div class="header-address">123 Pandora Street - Montreal QC - (514) 777 7890</div>
+            <div class="header-slogan">Excepteur sint occaecat</div>
+
         </div>
     </header>
     <section id="order-section" class="my-5">
         <div class="row mx-3">
             <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5'>
                 <div class="card m-2" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="./assets/burger.jpg" class="card-img-top dish__image-url" alt="burger">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title dish__title">Crispy Chicken Burger</h5>
+                        <p class="card-text dish__description">Crispy chicken tossed with specialty sauce, topped with
+                            pickles, lettuce, tomato and roasted garlic mayo</p>
+                        <p class="dish__price">$ 13.00</p>
+                        <div class="def-number-input number-input safari_only mx-auto">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                class="minus"></button>
+                            <input class="quantity" min="0" name="quantity" value="0" type="number">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                class="plus"></button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5'>
                 <div class="card m-2" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="./assets/burger.jpg" class="card-img-top dish__image-url" alt="burger">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title dish__title">Crispy Chicken Burger</h5>
+                        <p class="card-text dish__description">Crispy chicken tossed with specialty sauce, topped with
+                            pickles, lettuce, tomato and roasted garlic mayo</p>
+                        <p class="dish__price">$ 13.00</p>
+                        <input type="number" id="quantity" name="quantity" min="0" placeholder="quantity">
                     </div>
                 </div>
             </div>
-            <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5'>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5'>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5'>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5'>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5'>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5'>
-                <div class="card m-2" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
