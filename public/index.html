@@ -42,12 +42,12 @@
         </div>
 
         <div id="order-form">
-            <form action="#" method="POST"
+            <form action="/api/dishes" method="POST"
                 class="order-form d-flex flex-column justify-content-center align-items-center">
                 <label for="phone_number">Enter your phone number:</label>
                 <input type="tel" id="phone-number" name="phone_number" placeholder="phone number"
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" required>
-                <button class="order-form__btn mt-3" type="button">Submit Order</button>
+                     required>
+                <button class="order-form__btn mt-3" type="submit">Submit Order</button>
             </form>
         </div>
     </section>
@@ -65,6 +65,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="./scripts/loadDishes.js"></script>
+    <script type="text/javascript" src="./scripts/submitOrder.js"></script>
     <script type="text/javascript" src="./scripts/app.js"></script>
     <script type="text/javascript" src="./scripts/scrollToOrderSection.js"></script>
 
