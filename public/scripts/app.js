@@ -1,10 +1,16 @@
-$(() => {
-  $.ajax({
-    method: "GET",
-    url: "/api/users"
-  }).done((users) => {
-    for(user of users) {
-      $("<div>").text(user.name).appendTo($("body"));
-    }
-  });;
+$(document).ready(function() {
+
+  const loadDishes = function() {
+    $.ajax({
+      method:"GET",
+      url:"/api/dishes",
+      dataType:"json"
+    })
+      .then((data)=>renderDishes(data));
+
+
+  };
+
+  loadDishes();
+
 });
