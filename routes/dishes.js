@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const {sendSMS} = require('./send_sms');
+const {sendSMSToOwner} = require('./sendSMSToOwner');
 
 module.exports = ({ getDishes, addDish, addOrder }) => {
   router.get("/", (req, res) => {
@@ -16,9 +18,14 @@ module.exports = ({ getDishes, addDish, addOrder }) => {
     const {wantedDishes, phoneNumber} = req.body;
     addOrder(phoneNumber)
     .then(id => addDish(wantedDishes, id))
-    .then(res => console.log('hereee', res))
+    .then(order => {
+      sendSMSToOwner(order);
+    })
+    // .then(res => sendSMS(phoneNumber, 'Order placed'))
     .catch(err => console.log(err));
   });
 
   return router;
 }
+
+
