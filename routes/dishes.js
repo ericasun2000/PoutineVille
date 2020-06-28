@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-module.exports = ({ getDishes, addDish }) => {
+module.exports = ({ getDishes, addDish, addOrder }) => {
   router.get("/", (req, res) => {
     getDishes()
       .then(dishes => {
@@ -14,13 +14,11 @@ module.exports = ({ getDishes, addDish }) => {
 
   router.post("/", (req, res) => {
     console.log(req.body);
-  //   const {dish_id, order_id, quantity, price} = req.body;
-  //   addDish(dish_id, order_id, quantity, price)
-  //     .then(dish => {
-  //       console.log('inside ')
-  //       res.json(dish);
-  //     })
-  //     .catch(err => console.log(err));
+    const {wantedDishes, phoneNumber} = req.body;
+    addOrder(phoneNumber)
+    .then(id => addDish(wantedDishes,id))
+    .then(res => console.log('hereee', res))
+    .catch(err => console.log(err));
   });
 
   return router;
