@@ -20,13 +20,4 @@ const sendSMSToOwner = (order) => {
 }
 
 module.exports = { sendSMSToOwner };
-/*
-`
-Order ID : 21
 
-Items
-dish_id: 1 --- quantity: 3
-dish_id: 3 --- quantity: 1
-
-`
-*/
