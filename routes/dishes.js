@@ -13,10 +13,9 @@ module.exports = ({ getDishes, addDish, addOrder }) => {
   });
 
   router.post("/", (req, res) => {
-    console.log(req.body);
     const {wantedDishes, phoneNumber} = req.body;
     addOrder(phoneNumber)
-    .then(id => addDish(wantedDishes,id))
+    .then(id => addDish(wantedDishes, id))
     .then(res => console.log('hereee', res))
     .catch(err => console.log(err));
   });

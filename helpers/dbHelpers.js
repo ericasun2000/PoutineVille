@@ -8,13 +8,16 @@ module.exports = db => {
     };
 
     const addDish = (wantedDishes, orderId) => {
-      // const queryStr = 'INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES ';
-      wantedDishes.forEach(wantedDish => {
-        let queryStr = `INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES (${wantedDish.id}, ${orderId}, ${wantedDish.quantity}, ${wantedDishes.price}) RETURNINIG *`;
-        return db.query(queryStr).then(result => result.rows);
-      })
-
-      // queryStr += 'RETURNINIG *';
+      let qs = 'INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES ';
+      for( let i = 0; i < wantedDishes.length; i++) {
+        if(i === wantedDishes.length - 1){ // last item
+        qs += `(${wantedDishes[i].id}, ${orderId}, ${wantedDishes[i].quantity}, ${wantedDishes[i].price}) `;
+        }else{
+          qs += `(${wantedDishes[i].id}, ${orderId}, ${wantedDishes[i].quantity}, ${wantedDishes[i].price}), `;
+        }
+      }
+      qs += 'RETURNING *';
+      return db.query(qs).then(result => result.rows);
 
     }
 
