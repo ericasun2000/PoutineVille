@@ -13,6 +13,7 @@ module.exports = db => {
         let queryStr = `INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES (${wantedDish.id}, ${orderId}, ${wantedDish.quantity}, ${wantedDishes.price}) RETURNINIG *`;
         return db.query(queryStr).then(result => result.rows);
       })
+
       // queryStr += 'RETURNINIG *';
 
     }
