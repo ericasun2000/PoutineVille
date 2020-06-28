@@ -25,7 +25,7 @@ const loadDishes = function() {
                           <div class="def-number-input number-input safari_only mx-auto">
                               <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                                   class="minus"></button>
-                              <input class="quantity" min="0" name="quantity" value="0" type="number">
+                              <input class="quantity" min="0" name="quantity" value="0" type="number" data-dish-id=${dishElement.id} data-dish-price=${dishElement.price}>
                               <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                               class="plus"></button>
                           </div>
