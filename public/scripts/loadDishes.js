@@ -4,12 +4,8 @@ const loadDishes = function () {
     url: "/dishes",
     dataType: "json"
   })
-<<<<<<< HEAD
     .then((dishes)=>renderDishes(dishes))
     .then(()=>calculateTotalCost());
-=======
-    .then((dishes) => renderDishes(dishes));
->>>>>>> master
 };
 
 const renderDishes = function (dishes) {
