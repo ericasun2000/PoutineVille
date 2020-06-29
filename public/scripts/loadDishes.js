@@ -1,20 +1,20 @@
 const loadDishes = function() {
-    $.ajax({
-      method:"GET",
-      url:"/api/dishes",
-      dataType:"json"
-    })
-      .then((dishes)=>renderDishes(dishes));
-  };
+  $.ajax({
+    method:"GET",
+    url:"/api/dishes",
+    dataType:"json"
+  })
+    .then((dishes)=>renderDishes(dishes));
+};
 
-  const renderDishes = function(dishes) {
-    for (const dish of dishes) {
-      $(".row").append(createDishElement(dish));
-    }
-  };
+const renderDishes = function(dishes) {
+  for (const dish of dishes) {
+    $(".row").append(createDishElement(dish));
+  }
+};
 
-  const createDishElement = function(dishElement) {
-    const dish = `
+const createDishElement = function(dishElement) {
+  const dish = `
     <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5 align-item-center'>
                   <div class="card m-2" style="width: 18rem;">
                       <img src=${dishElement.image_url} class="card-img-top dish__image-url" alt=${dishElement.name}>
@@ -32,5 +32,5 @@ const loadDishes = function() {
                       </div>
                   </div>
               </div>`;
-    return dish;
-  };
+  return dish;
+};
