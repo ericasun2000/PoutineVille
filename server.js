@@ -37,13 +37,11 @@ app.use(express.static(__dirname + "/public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const dishesRoutes = require("./routes/dishes");
-const smsRoutes = require('./routes/serverSMS');
 const orderRoutes = require('./routes/orders');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/dishes", dishesRoutes(dbHelpers));
-app.use('/sms', smsRoutes());
 app.use("/orders", orderRoutes(dbHelpers));
 // Note: mount other resources here, using the same pattern above
 
