@@ -17,15 +17,15 @@ module.exports = ({ getDishes, addDish, addOrder }) => {
   router.post("/", (req, res) => {
     const {wantedDishes, phoneNumber} = req.body;
     addOrder(phoneNumber)
-    .then(id => addDish(wantedDishes, id))
-    .then(order => {
-      sendSMSToOwner(order);
-    })
+      .then(id => addDish(wantedDishes, id))
+      .then(order => {
+        sendSMSToOwner(order);
+      }).then(()=>res.end())
     // .then(res => sendSMS(phoneNumber, 'Order placed'))
-    .catch(err => console.log(err));
+      .catch(err => console.log(err));
   });
 
   return router;
-}
+};
 
 

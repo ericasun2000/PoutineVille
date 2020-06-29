@@ -10,7 +10,8 @@ $(document).ready(function() {
 
   });
 
-  $("form").on("submit", function(event) {
+  $(".owner-form").on("submit", function(event) {
+    console.log('inside ajax post order---- hello');
     event.preventDefault();
     const orderID = Number($("#order-id").val());
     const message = createMessage();
