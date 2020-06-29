@@ -19,6 +19,9 @@ $(document).ready(function() {
     console.log("orderID",orderID);
     console.log("message",message);
     $("input[type='radio']").prop("checked",false);
+    $("#order-id").val("");
+    $("#order-minutes").val("");
+
 
   });
 
