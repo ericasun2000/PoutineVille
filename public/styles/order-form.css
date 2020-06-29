@@ -2,3 +2,29 @@
     width: 60%;
     margin: 0 auto;
 }
+
+.tel-input {
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width:100%;
+    padding:8px 0 5px 0;
+}
+
+.tel-input::placeholder {
+    text-align: center;
+}
+
+.tel-input:focus {
+    outline: none;
+    border-bottom: 2px solid #B8010A;
+}
+
+.hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
