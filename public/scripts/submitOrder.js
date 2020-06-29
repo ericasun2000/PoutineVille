@@ -2,16 +2,21 @@ const submitOrder = function() {
   $('.order-form').on('submit', function(event) {
     event.preventDefault();
     console.log('hello');
+    const orderObj = createOrderObj();
 
+    if (!orderObj) {
+      alert("empty");
+    } else {
     $.ajax({
       url: "/orders",
       method: "POST",
-      data: JSON.stringify(createOrderObj()),
+      data: JSON.stringify(orderObj),
       contentType: "application/json; charset=utf-8",
       dataType: "json"
     }).done(() => console.log('successful calling ajax POST'))
       .fail(err => console.log(err.message))
       .always(() => console.log("post request done"));
+    }
 
   });
 };
@@ -37,6 +42,10 @@ const getOrderInfo = function() {
 const createOrderObj = function() {
   const wantedDishes = getOrderInfo();
   const phoneNumber = $('#phone-number').val();
+
+  if (wantedDishes.length < 1) {
+    return false;
+  }
 
   return {
     wantedDishes,
