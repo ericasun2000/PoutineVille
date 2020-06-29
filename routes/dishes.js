@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const {sendSMS} = require('./send_sms');
 const {sendSMSToOwner} = require('./sendSMSToOwner');
 
 module.exports = ({ getDishes, addDish, addOrder }) => {
