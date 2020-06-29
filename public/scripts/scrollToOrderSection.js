@@ -1,9 +1,9 @@
 $(() => {
-    const headerBtn = $('.header-btn');
+  const headerBtn = $('.header-btn');
 
-    headerBtn.click(function () {
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#order-section").offset().top
-        }, 1500);
-    })
+  headerBtn.click(function() {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#order-section").offset().top
+    }, 1500);
+  });
 });
