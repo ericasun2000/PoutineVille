@@ -1,0 +1,12 @@
+.empty-form {
+  width: 90%;
+  margin: auto;
+  border: 0.25rem solid #B8010A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-form p {
+  margin: 0;
+}
