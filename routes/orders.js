@@ -7,8 +7,16 @@ module.exports = ({ findNumber }) => {
 
   router.post("/status", (req, res) => {
     const {orderID, message} = req.body;
+    console.log(message);
     findNumber(orderID)
-      .then(telephone => sendSMS(telephone,message))
+      .then(customer => {
+        console.log('customer',customer);
+        console.log('telephone ------' , customer.telephone);
+        sendSMS(customer.telephone, message);
+      }).then(()=> {
+        console.log('after sendSMS');
+        res.send('ok');
+      })
       .catch(err => console.log(err));
   });
 

@@ -35,7 +35,7 @@ module.exports = db => {
       text: `SELECT telephone FROM orders WHERE id = $1`,
       values: [orderId]
     };
-    return db.query(query).then(result => result.rows[0].telephone);
+    return db.query(query).then(result => result.rows[0]);
   };
 
   return {
