@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {sendSMS} = require('./send_sms');
-const {sendSMSToOwner} = require('./sendSMSToOwner');
-
+const {sendSMS, sendSMSToOwner} = require('../helpers/sendSMS');
 
 module.exports = ({ findNumber,addOrder,addDish }) => {
 
