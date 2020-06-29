@@ -1,18 +1,19 @@
 #footer {
-    min-height: 25vh;
+    min-height: 35vh;
     background-color: #4C070D;
     color: white;
 }
 
-/* a.fab {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
+#back-to-top-btn {
+    background-color: transparent;
+    border: none;
     color: white;
-} */
+}
+
+#back-to-top-btn:focus {
+    border: none;
+    outline: none;
+}
 
 a.fab { 
     color: white;
@@ -21,8 +22,6 @@ a.fab {
     padding: 1rem;
     border-radius: 20%;
     text-align: center;
-
-
  } 
 
 .fab:hover {
