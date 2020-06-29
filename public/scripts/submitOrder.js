@@ -9,7 +9,9 @@ const submitOrder = function() {
         data: JSON.stringify(createOrderObj()),
         contentType: "application/json; charset=utf-8",
         dataType: "json"
-      }).then(() => console.log('successful calling ajax POST'));
+      }).done(() => console.log('successful calling ajax POST'))
+      .fail(err => console.log(err.message))
+      .always(() => console.log("post request done"));
 
     });
   }
