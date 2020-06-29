@@ -20,8 +20,9 @@ module.exports = ({ getDishes, addDish, addOrder }) => {
       .then(id => addDish(wantedDishes, id))
       .then(order => {
         sendSMSToOwner(order);
-      }).then(()=>res.end())
-    // .then(res => sendSMS(phoneNumber, 'Order placed'))
+        console.log("adding order");
+        res.send({message:"ok"});
+      })
       .catch(err => console.log(err));
   });
 
