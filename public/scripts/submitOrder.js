@@ -4,7 +4,7 @@ const submitOrder = function() {
     console.log('hello');
 
     $.ajax({
-      url: "/api/dishes",
+      url: "/orders",
       method: "POST",
       data: JSON.stringify(createOrderObj()),
       contentType: "application/json; charset=utf-8",
