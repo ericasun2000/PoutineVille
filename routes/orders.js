@@ -12,10 +12,8 @@ module.exports = ({ findNumber }) => {
       .then(customer => {
         console.log('customer',customer);
         console.log('telephone ------' , customer.telephone);
+        res.send({message:"ok"});
         sendSMS(customer.telephone, message);
-      }).then(()=> {
-        console.log('after sendSMS');
-        res.send('ok');
       })
       .catch(err => console.log(err));
   });
