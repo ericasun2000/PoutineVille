@@ -1,7 +1,7 @@
 const loadDishes = function() {
   $.ajax({
     method:"GET",
-    url:"/api/dishes",
+    url:"/dishes",
     dataType:"json"
   })
     .then((dishes)=>renderDishes(dishes));
