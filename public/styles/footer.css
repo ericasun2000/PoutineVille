@@ -2,12 +2,24 @@
     min-height: 35vh;
     background-color: #4C070D;
     color: white;
+    font-family: 'Lato', sans-serif;
+
 }
 
 #back-to-top-btn {
     background-color: transparent;
     border: none;
     color: white;
+}
+
+.admin-link {
+    color: white;
+    text-decoration: none;
+}
+
+.admin-link:hover {
+    text-decoration: none;
+    color: yellow;
 }
 
 #back-to-top-btn:focus {
