@@ -20,18 +20,22 @@
     <link rel="stylesheet" href="styles/menu.css" type="text/css" />
     <link rel="stylesheet" href="styles/order-form.css" type="text/css" />
 
-    <title>Fooedie</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+        href="https://i.pinimg.com/236x/0a/9d/f5/0a9df5448e2ccd5ae436a99846a713dc--sale-poster-poutine.jpg" />
+
+    <title>Poutineville</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/">Foodie</a>
+            <a class="navbar-brand" href="/">Poutineville</a>
         </nav>
         <div class="header-text">
             <div class="header-address">123 Pandora Street, Montreal QC - (514) 777 7890</div>
-            <div class="header-slogan">Excepteur sint occaecat</div>
+            <div class="header-slogan">Best Poutine in Town</div>
             <button class="header-btn" type="button">Order Now</button>
 
         </div>
@@ -45,8 +49,7 @@
             <form action="/orders" method="POST"
                 class="order-form d-flex flex-column justify-content-center align-items-center">
                 <label for="phone_number">Enter your phone number:</label>
-                <input type="tel" id="phone-number" name="phone_number" placeholder="phone number"
-                     required>
+                <input type="tel" id="phone-number" name="phone_number" placeholder="phone number" required>
                 <button class="order-form__btn mt-3" type="submit">Submit Order</button>
             </form>
         </div>
