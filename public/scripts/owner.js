@@ -15,9 +15,18 @@ $(document).ready(function() {
     const orderID = Number($("#order-id").val());
     const message = createMessage();
 
+    $.ajax({
+      url: "/orders/status",
+      method: "POST",
+      data: JSON.stringify({orderID,message}),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json"
+    }).then(() => console.log('successful calling ajax POST'));
+
 
     console.log("orderID",orderID);
     console.log("message",message);
+    //clear all input after submission
     $("input[type='radio']").prop("checked",false);
     $("#order-id").val("");
     $("#order-minutes").val("");
