@@ -17,18 +17,18 @@ const sendSMS = (phoneNumber, msg) => {
 };
 
 const sendSMSToOwner = (order) => {
-    let msg = `From PoutineVille\n
+  let msg = `From PoutineVille\n
     Order ID: ${order[0].order_id}
 
-    Ordered Dishes:\n`;
+    Ordered Dishes:\n \n`;
 
-    for (let dish of order) {
-      msg += `Dish Id: ${dish.dish_id} --> Quantity: ${dish.quantity}\n`;
-    }
-    msg += `\nPlease go online to specify when the order will be ready`;
-    console.log(msg);
-    sendSMS(process.env.TWILIO_OWNER, msg);
-  };
+  for (let dish of order) {
+    msg += `${dish.name} x${dish.quantity}\n \n`;
+  }
+  msg += `\nPlease go online to specify when the order will be ready`;
+  console.log(msg);
+  sendSMS(process.env.TWILIO_OWNER, msg);
+};
 
 
 module.exports = { sendSMS, sendSMSToOwner };
