@@ -9,9 +9,9 @@ module.exports = ({ findNumber,addOrder,addDish }) => {
     addOrder(phoneNumber)
       .then(id => addDish(wantedDishes, id))
       .then(order => {
+        res.send({message:"ok"});
         sendSMSToOwner(order);
         console.log("adding order");
-        res.send({message:"ok"});
       })
       .catch(err => console.log(err));
   });
