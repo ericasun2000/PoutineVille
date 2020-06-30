@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {sendSMS, sendSMSToOwner} = require('../helpers/sendSMS');
 
-module.exports = ({ findNumber,addOrder,addDish }) => {
+module.exports = ({ findNumber,addOrder,addDish,getOrderById }) => {
 
   router.post("/", (req, res) => {
     const {wantedDishes, phoneNumber} = req.body;
@@ -11,8 +11,10 @@ module.exports = ({ findNumber,addOrder,addDish }) => {
       .then(order => {
         res.send({message:"ok"});
         sendSMSToOwner(order);
-        console.log("adding order");
+        return order[0].order_id;
       })
+      .then(id => getOrderById(id))
+      .then(order => console.log(order))
       .catch(err => console.log(err));
   });
 
