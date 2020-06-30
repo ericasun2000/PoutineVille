@@ -38,11 +38,13 @@ app.use(express.static(__dirname + "/public"));
 // Note: Feel free to replace the example routes below with your own
 const dishesRoutes = require("./routes/dishes");
 const orderRoutes = require('./routes/orders');
+const adminRoutes = require('./routes/admin');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/dishes", dishesRoutes(dbHelpers));
 app.use("/orders", orderRoutes(dbHelpers));
+app.use("/admin", adminRoutes());
 // Note: mount other resources here, using the same pattern above
 
 
@@ -50,13 +52,10 @@ app.use("/orders", orderRoutes(dbHelpers));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
 
-app.get("/admin", (req, res) => {
-  res.sendFile(__dirname + '/public/owner.html');
-});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
