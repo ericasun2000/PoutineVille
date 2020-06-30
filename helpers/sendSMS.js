@@ -8,7 +8,7 @@ const client = require('twilio')(accountSid, authToken);
 const sendSMS = (phoneNumber, msg) => {
   client.messages
     .create({
-      body: 'From Poutineville\n' + msg,
+      body:  msg,
       from: process.env.TWILIO_NUMBER,
       to: phoneNumber
     })
@@ -17,7 +17,7 @@ const sendSMS = (phoneNumber, msg) => {
 };
 
 const sendSMSToOwner = (order) => {
-  let msg = `From PoutineVille\n
+  let msg = `\n From PoutineVille \n
     Order ID: ${order[0].order_id}
 
     Ordered Dishes:\n \n`;
