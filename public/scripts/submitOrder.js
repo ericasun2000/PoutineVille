@@ -21,6 +21,7 @@ const submitOrder = function () {
       }).done(() => {
         console.log('successful calling ajax POST');
         toastr.success('Order Submitted');
+        clearOrder();
       })
         .fail(err => console.log(err.message))
         .always(() => console.log("post request done"));
