@@ -4,12 +4,10 @@ const submitOrder = function () {
     console.log('hello');
     // postion notification top center of page
     toastr.options.positionClass = "toast-top-center";
-    $('.empty-form').slideUp();
+
     const orderObj = createOrderObj();
 
     if (!orderObj) {
-      $('.empty-form').slideDown();
-
       toastr.warning("Your cart is empty");
     } else {
       $.ajax({
