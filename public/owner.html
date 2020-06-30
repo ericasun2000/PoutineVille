@@ -18,40 +18,47 @@
     <!-- Customized CSS -->
     <link rel="stylesheet" href="styles/owner.css" type="text/css" />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/564x/b4/23/b3/b423b3fa98dfe76f9a174049cad6a30d.jpg" />
 
-    <title>Fooedie</title>
+    <title>PoutineVille</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/">PoutineVille / Admin Login</a>
+            <a class="navbar-brand" href="/">PoutineVille</a>
         </nav>
     </header>
 
-    <div style="display: flex; justify-content: center;align-items: center;">
-        <form action='/orders/status' method='POST' class="owner-form">
-            <label for="order-id">Order ID :</label><br>
-            <input type="number" min="0" id="order-id" name="order-id" required><br>
+    <!-- style="display: flex; justify-content: center;align-items: center;" -->
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center form-container mt-5 mx-auto">
+            <form action='/orders/status' method='POST' class="owner-form p-5">
+                <h3 class="form__title text-center">Order Status Form</h3>
+                <label for="order-id">Order ID :</label><br>
+                <input type="number" min="1" class="order-text mb-4" id="order-id" name="order-id" required><br>
 
-            <span> Is the order ready ?</span><br>
+                <span> Is the order ready?</span><br>
 
-            <input type="radio" id="order-ready" name="order-status" value="yes" required>
-            <label for="order-ready">Yes</label><br>
+                <input type="radio" id="order-ready" name="order-status" value="yes" required>
+                <label for="order-ready">Yes</label><br>
 
-            <input type="radio" id="order-not-ready" name="order-status" value="no" required>
-            <label for="order-ready">No</label><br>
+                <input type="radio" id="order-not-ready" name="order-status" value="no" required>
+                <label for="order-ready">No</label><br>
 
-            <label for="order-minutes">In how many minutes, will the order be ready ? </label><br>
-            <input type="number" min="0" id="order-minutes" name="order-minutes" required><br>
+                <label for="order-minutes" class="mt-3">In how many minutes, will the order be ready? </label><br>
+                <input type="number" min="0" class="order-text" id="order-minutes" name="order-minutes" required><br>
 
-            <input type="submit" value="Submit">
+                <!-- <input type="submit" value="Submit" class="mt-3 form__btn"> -->
+                <button type="submit" class="btn btn-outline-secondary mt-3">Submit</button>
 
 
 
-        </form>
 
+            </form>
+        </div>
 
     </div>
 
