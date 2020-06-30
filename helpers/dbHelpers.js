@@ -19,14 +19,18 @@ module.exports = db => {
         qs += `(${wantedDishes[i].id}, ${orderId}, ${wantedDishes[i].quantity}, ${wantedDishes[i].price}), `;
       }
     }
-    qs += 'RETURNING *';
-    return db.query(qs).then(result => result.rows);
+    // qs += 'RETURNING order_id';
+    return db.query(qs).then(() => orderId);
 
   };
 
   const getOrderById = (orderId) => {
-    const query = `SELECT dishes.name as name,ordered_dishes.quantity as quantity FROM ordered_dishes JOIN orders ON orders.id =order_id JOIN dishes ON dishes.id = dish_id WHERE order_id = ${orderId}`;
-    return db.query(query).then(result => result.rows);
+    console.log("inside get order id :",orderId);
+    const query = {
+      text:`SELECT order_id,name,quantity  FROM ordered_dishes JOIN dishes ON dishes.id = dish_id  WHERE order_id = $1`,
+      values:[orderId]
+    };
+    return db.query(query).then(result =>  result.rows).catch(err => err);
   };
 
   const addOrder = (phoneNumber) => {

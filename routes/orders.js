@@ -8,13 +8,10 @@ module.exports = ({ findNumber,addOrder,addDish,getOrderById }) => {
     const {wantedDishes, phoneNumber} = req.body;
     addOrder(phoneNumber)
       .then(id => addDish(wantedDishes, id))
-      .then(order => {
+      .then(id =>  {
         res.send({message:"ok"});
-        sendSMSToOwner(order);
-        return order[0].order_id;
-      })
-      .then(id => getOrderById(id))
-      .then(order => console.log(order))
+        return getOrderById(id)})
+      .then(order => sendSMSToOwner(order))
       .catch(err => console.log(err));
   });
 
