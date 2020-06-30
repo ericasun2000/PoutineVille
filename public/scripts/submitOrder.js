@@ -10,7 +10,7 @@ const submitOrder = function () {
     if (!orderObj) {
       $('.empty-form').slideDown();
 
-      toastr.error("Your cart is empty");
+      toastr.warning("Your cart is empty");
     } else {
       $.ajax({
         url: "/orders",
@@ -23,7 +23,10 @@ const submitOrder = function () {
         toastr.success('Order Submitted');
         clearOrder();
       })
-        .fail(err => console.log(err.message))
+        .fail(err => {
+          console.log(err.message);
+          toastr.error("An error occurred. Please submit again");
+        })
         .always(() => console.log("post request done"));
     }
 
