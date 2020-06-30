@@ -16,6 +16,13 @@ nav > a.navbar-brand{
     letter-spacing: 0.15rem;
 }
 
+.owner{
+    color: white;
+    font-family: 'Mate', serif;
+    letter-spacing:0.15rem;
+    text-decoration: none;
+}
+
 .header-text{
     position:absolute;
     top:35%;
