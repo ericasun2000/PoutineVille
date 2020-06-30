@@ -1,3 +1,5 @@
+const orders = require("../routes/orders");
+
 module.exports = db => {
   const getDishes = () => {
     const query = {
@@ -22,6 +24,11 @@ module.exports = db => {
 
   };
 
+  const getOrderById = (orderId) => {
+    const query = `SELECT dishes.name as name,ordered_dishes.quantity as quantity FROM ordered_dishes JOIN orders ON orders.id =order_id JOIN dishes ON dishes.id = dish_id WHERE order_id = ${orderId}`;
+    return db.query(query).then(result => result.rows);
+  };
+
   const addOrder = (phoneNumber) => {
     const query = {
       text: `INSERT INTO orders(telephone) VALUES ($1) RETURNING id`,
@@ -43,5 +50,6 @@ module.exports = db => {
     addOrder,
     addDish,
     findNumber,
+    getOrderById
   };
 };
