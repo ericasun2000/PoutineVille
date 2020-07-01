@@ -9,6 +9,20 @@ module.exports = db => {
     return db.query(query).then(result => result.rows);
   };
 
+  const getOrderedDishes = () => {
+    const query = {
+      text: `
+      SELECT dishes.id, dishes.name, SUM(ordered_dishes.quantity) as sum
+      FROM ordered_dishes
+      JOIN dishes ON ordered_dishes.dish_id = dishes.id
+      GROUP BY dishes.id, dishes.name
+      ORDER BY sum;
+      `,
+    };
+
+    return db.query(query).then(result => result.rows);
+  };
+
   const addDish = (wantedDishes, orderId) => {
     let qs = 'INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES ';
     for (let i = 0; i < wantedDishes.length; i++) {
@@ -25,12 +39,12 @@ module.exports = db => {
   };
 
   const getOrderById = (orderId) => {
-    console.log("inside get order id :",orderId);
+    console.log("inside get order id :", orderId);
     const query = {
-      text:`SELECT order_id,name,quantity  FROM ordered_dishes JOIN dishes ON dishes.id = dish_id  WHERE order_id = $1`,
-      values:[orderId]
+      text: `SELECT order_id,name,quantity  FROM ordered_dishes JOIN dishes ON dishes.id = dish_id  WHERE order_id = $1`,
+      values: [orderId]
     };
-    return db.query(query).then(result =>  result.rows).catch(err => err);
+    return db.query(query).then(result => result.rows).catch(err => err);
   };
 
   const addOrder = (phoneNumber) => {
@@ -51,6 +65,7 @@ module.exports = db => {
 
   return {
     getDishes,
+    getOrderedDishes,
     addOrder,
     addDish,
     findNumber,
