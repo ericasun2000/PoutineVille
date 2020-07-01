@@ -31,6 +31,10 @@ const submitOrder = function () {
 
 
 
+
+
+
+
 const getOrderInfo = function () {
   const inputArray = $('.quantity');
 
