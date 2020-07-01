@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {sendSMS, sendSMSToOwner} = require('../helpers/sendSMS');
 
-module.exports = ({ findNumber,addOrder,addDish,getOrderById }) => {
+module.exports = ({ findNumber,addOrder,addDish,getOrderById,orderCompleted }) => {
 
   router.post("/", (req, res) => {
     const {wantedDishes, phoneNumber} = req.body;
@@ -16,7 +16,11 @@ module.exports = ({ findNumber,addOrder,addDish,getOrderById }) => {
   });
 
   router.post("/status", (req, res) => {
-    const {orderID, message} = req.body;
+    const {orderID, message,status} = req.body;
+    if (status) {
+      orderCompleted(orderID)
+        .catch(() => res.status(500).send("An error occured"));
+    }
     console.log(message);
     findNumber(orderID)
       .then(customer => {
