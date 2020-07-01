@@ -1,12 +1,11 @@
 const submitOrder = function () {
   $('.order-form').on('submit', function (event) {
     event.preventDefault();
-    console.log('hello');
+
     // postion notification top center of page
     toastr.options.positionClass = "toast-top-center";
 
     const orderObj = createOrderObj();
-
     if (!orderObj) {
       toastr.warning("Your cart is empty");
     } else {
@@ -17,7 +16,6 @@ const submitOrder = function () {
         contentType: "application/json; charset=utf-8",
         dataType: "json"
       }).done(() => {
-        console.log('successful calling ajax POST');
         toastr.success('Order Submitted');
         clearOrder();
       })
@@ -30,6 +28,8 @@ const submitOrder = function () {
 
   });
 };
+
+
 
 const getOrderInfo = function () {
   const inputArray = $('.quantity');
