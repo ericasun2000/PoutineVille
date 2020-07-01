@@ -28,11 +28,14 @@ module.exports = ({ getOrderedDishes }) => {
   });
 
   router.get("/analysisData", (req, res) => {
-    console.log('YESS INSIDE /analysisData route')
-    getOrderedDishes()
-      .then(totalOrderedDishes => res.json(totalOrderedDishes))
-      .catch(err => res.status(500).json({ error: err.message })
-      )
+    if (req.session.isAuthenticated) {
+      getOrderedDishes()
+        .then(totalOrderedDishes => res.json(totalOrderedDishes))
+        .catch(err => res.status(500).json({ error: err.message })
+        )
+    } else {
+      res.status(401).json({ error: 'You do not have permission to access this.' })
+    }
 
   });
 
