@@ -3,6 +3,6 @@ const clearOrder = function() {
   for (const input of inputArray) {
     $(input).val("0");
   }
-
+  $("#total-cost").text("$0");
   $("#phone-number").val("");
 };
