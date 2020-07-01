@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+// const { getDishes } = require('../helpers/dbHelpers')
 
-module.exports = () => {
+module.exports = ({getDishes}) => {
   router.get("/", (req, res) => {
     //if has cookie
     if (req.session.isAuthenticated) {
@@ -11,8 +12,6 @@ module.exports = () => {
 
     } else {
       res.render("adminLogin");
-
-
     }
 
   });
@@ -31,6 +30,16 @@ module.exports = () => {
     req.session = null;
     res.redirect('/admin');
   });
+
+  router.get("/display", (req, res) => {
+    getDishes()
+    // .then(dishes => console.log(dishes[0].name))
+    .then(dishes => {
+      res.render("display", {dishes});
+    })
+  });
+
+
 
 
   return router;
