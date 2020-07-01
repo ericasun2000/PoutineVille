@@ -69,6 +69,7 @@ module.exports = db => {
     addDish,
     findNumber,
     getOrderById,
-    orderCompleted
+    orderCompleted,
+    uncompletedOrders
   };
 };
