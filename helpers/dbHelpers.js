@@ -49,11 +49,21 @@ module.exports = db => {
     return db.query(query).then(result => result.rows[0]);
   };
 
+  const orderCompleted =(orderId) => {
+    const query = {
+      text: `UPDATE  orders SET completed_at = NOW() WHERE id=$1`,
+      values: [orderId]
+    };
+    return db.query(query);
+
+  }
+
   return {
     getDishes,
     addOrder,
     addDish,
     findNumber,
-    getOrderById
+    getOrderById,
+    orderCompleted
   };
 };
