@@ -29,7 +29,7 @@ module.exports = () => {
 
   router.post("/logout", (req, res) => {
     req.session = null;
-    res.redirect('admin');
+    res.redirect('/admin');
   });
 
 

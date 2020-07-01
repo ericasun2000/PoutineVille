@@ -19,11 +19,12 @@ const submitOrder = function () {
         toastr.success('Order Submitted');
         clearOrder();
       })
-        .fail(() => toastr.error("An error occurred. Please submit again"));
+        .fail(() => toastr.error("An error occurred. Please submit again"))
         .always(() => console.log("post request done"));
     }
 
-  });
+  }
+  );
 };
 
 const getOrderInfo = function () {
