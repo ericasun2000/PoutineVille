@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-module.exports = () => {
+module.exports = ({ getOrderedDishes }) => {
   router.get("/", (req, res) => {
     //if has cookie
     if (req.session.isAuthenticated) {
       res.render("admin");
-      res.sendFile(path.join(__dirname + '/../views/owner.html'));
+      // res.sendFile(path.join(__dirname + '/../views/owner.html'));
 
     } else {
       res.render("adminLogin");
@@ -24,6 +24,24 @@ module.exports = () => {
       res.render("admin");
     } else {
       res.render("adminlogin");
+    }
+  });
+
+  router.get("/analysisData", (req, res) => {
+    console.log('YESS INSIDE /analysisData route')
+    getOrderedDishes()
+      .then(totalOrderedDishes => res.json(totalOrderedDishes))
+      .catch(err => res.status(500).json({ error: err.message })
+      )
+
+  });
+
+  router.get("/analytics", (req, res) => {
+    if (req.session.isAuthenticated) {
+      res.render("analytics");
+    } else {
+      res.redirect("/admin");
+
     }
   });
 
