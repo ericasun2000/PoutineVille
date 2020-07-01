@@ -1,11 +1,175 @@
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(1,1,1,15);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(1,2,1,15);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(1,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(1,2,1,10);
 
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(2,4,5,5);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(2,4,5,13);
 
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(3,1,1,15);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(3,1,1,10);
 
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(4,3,2,20);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(4,3,2,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(5,3,2,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(5,1,1,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(6,1,2,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(6,5,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(6,7,2,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(6,8,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(7,8,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(8,1,2,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(9,6,2,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(10,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(10,2,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(10,3,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(11,5,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(12,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(12,7,2,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(12,8,2,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(13,5,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(13,6,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(14,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(14,3,1,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(14,6,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(14,7,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(14,8,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(15,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(15,2,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(15,3,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(16,1,1,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(17,3,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(18,1,2,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(18,3,1,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(18,4,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(18,7,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(19,6,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(20,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(20,2,3,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(20,3,1,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(20,5,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(20,6,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(20,7,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(21,1,1,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(22,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(22,1,7,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(23,8,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(24,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(24,1,8,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(25,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(25,1,8,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(26,1,2,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(27,4,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(28,5,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(29,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(29,2,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(29,8,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(30,4,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(31,6,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(32,8,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(33,1,2,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(34,5,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(35,6,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(35,7,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(35,8,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(36,2,1,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(37,1,2,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(38,2,2,10);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(39,4,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(40,5,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(41,5,4,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(42,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(42,4,1,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(42,5,1,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(42,7,4,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(43,7,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(44,5,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(44,7,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(44,8,2,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(44,8,2,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(45,5,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(46,3,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(47,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(47,2,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(47,3,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(48,3,1,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(48,3,1,13);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(49,5,1,14);
+
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,1,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,2,1,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,3,1,14);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
