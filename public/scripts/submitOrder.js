@@ -1,13 +1,12 @@
 const submitOrder = function () {
   $('.order-form').on('submit', function (event) {
     event.preventDefault();
-
-    // postion notification top center of page
-    toastr.options.positionClass = "toast-top-center";
-
+    console.log('hello');
+    $('.empty-form').slideUp();
     const orderObj = createOrderObj();
+
     if (!orderObj) {
-      toastr.warning("Your cart is empty");
+      $('.empty-form').slideDown();
     } else {
       $.ajax({
         url: "/orders",
@@ -15,21 +14,13 @@ const submitOrder = function () {
         data: JSON.stringify(orderObj),
         contentType: "application/json; charset=utf-8",
         dataType: "json"
-      }).done(() => {
-        toastr.success('Order Submitted');
-        clearOrder();
-      })
-        .fail(err => {
-          console.log(err.message);
-          toastr.error("An error occurred. Please submit again");
-        })
+      }).done(() => console.log('successful calling ajax POST'))
+        .fail(err => console.log(err.message))
         .always(() => console.log("post request done"));
     }
 
   });
 };
-
-
 
 const getOrderInfo = function () {
   const inputArray = $('.quantity');
