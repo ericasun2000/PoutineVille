@@ -1,5 +1,7 @@
 
 $(document).ready(function() {
+  // postion notification top center of page
+  toastr.options.positionClass = "toast-top-center";
 
   $("input[type='radio']").click(function() {
     if ($("#order-ready").is(":checked")) {
@@ -22,15 +24,19 @@ $(document).ready(function() {
       data: JSON.stringify({orderID,message}),
       contentType: "application/json; charset=utf-8",
       dataType: "json"
-    }).then(() => console.log('successful calling ajax POST'));
+    }).then(() => {
+      toastr.success('Success');
+      //clear all input after submission
+      $("input[type='radio']").prop("checked",false);
+      $("#order-id").val("");
+      $("#order-minutes").val("");
+
+    })
+      .catch(() => toastr.error("An error occurred. Please submit again"));
 
 
     console.log("orderID",orderID);
     console.log("message",message);
-    //clear all input after submission
-    $("input[type='radio']").prop("checked",false);
-    $("#order-id").val("");
-    $("#order-minutes").val("");
 
 
   });
