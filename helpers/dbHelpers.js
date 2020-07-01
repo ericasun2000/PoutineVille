@@ -56,7 +56,12 @@ module.exports = db => {
     };
     return db.query(query);
 
-  }
+  };
+
+  const uncompletedOrders = () => {
+    const query =" SELECT id FROM orders WHERE completed_at IS NULL";
+    return db.query(query).then(results => results.rows);
+  };
 
   return {
     getDishes,
