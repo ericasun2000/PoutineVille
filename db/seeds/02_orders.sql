@@ -48,5 +48,3 @@ INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1234567801','2
 INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1234567816','2020-06-27 17:44:00.000000+00','2020-06-27 17:55:00.000000+00'); 
 INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1234567825','2020-06-27 17:47:00.000000+00','2020-06-27 17:58:00.000000+00');
 INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1234567822','2020-06-27 17:50:00.000000+00','2020-06-27 18:00:00.000000+00'); 
-
-
