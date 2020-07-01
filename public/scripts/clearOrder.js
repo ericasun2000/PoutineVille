@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const clearOrder = function() {
   const inputArray = $('.quantity');
   for (const input of inputArray) {
