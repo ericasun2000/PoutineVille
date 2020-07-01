@@ -18,7 +18,7 @@ const createDishElement = function (dishElement) {
   const dish = `
     <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5 align-item-center d-flex justify-content-center'>
                   <div class="card h-100 m-2" style="width: 18rem;">
-                      <img src=${dishElement.image_url} class="card-img-top dish__image-url" alt=${dishElement.name}>
+                      <img src=${dishElement.image_url} class="card-img-top  img-fluid" alt=${dishElement.name}>
                       <div class="card-body d-flex flex-column text-center">
                           <h5 class="card-title dish__title">${dishElement.name}</h5>
                           <p class="card-text dish__description">${dishElement.description}</p>
