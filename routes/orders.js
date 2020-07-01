@@ -12,7 +12,7 @@ module.exports = ({ findNumber,addOrder,addDish,getOrderById }) => {
         res.send({message:"ok"});
         return getOrderById(id)})
       .then(order => sendSMSToOwner(order))
-      .catch(err => console.log(err));
+      .catch(() => res.status(500).send("An error occured"));
   });
 
   router.post("/status", (req, res) => {
@@ -25,7 +25,7 @@ module.exports = ({ findNumber,addOrder,addDish,getOrderById }) => {
         res.send({message:"ok"});
         sendSMS(customer.telephone, message);
       })
-      .catch(err => console.log(err));
+      .catch(() => res.status(500).send("An error occured"));
   });
 
   return router;
