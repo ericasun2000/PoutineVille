@@ -29,9 +29,19 @@ const generateChart = (dishArr) => {
             },
             scales: {
                 yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Quantity'
+                    },
                     ticks: {
                         beginAtZero: true
                     }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Dishes'
+                    },
                 }]
             }
         }
