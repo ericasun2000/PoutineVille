@@ -3,32 +3,36 @@ const router = express.Router();
 const path = require('path');
 
 module.exports = () => {
-    router.get("/", (req, res) => {
-        //if has cookie
-        if (req.session.isAuthenticated) {
-            res.sendFile(path.join(__dirname + '/../public/owner.html'));
-        } else {
-            res.sendFile(path.join(__dirname + '/../public/ownerLogin.html'));
-        }
+  router.get("/", (req, res) => {
+    //if has cookie
+    if (req.session.isAuthenticated) {
+      res.render("admin");
+      res.sendFile(path.join(__dirname + '/../views/owner.html'));
 
-    });
-
-    router.post("/", (req, res) => {
-        // check inputed password
-        if (req.body.password === "1234") {
-            req.session.isAuthenticated = true;
-            res.sendFile(path.join(__dirname + '/../public/owner.html'));
-        } else {
-            res.sendFile(path.join(__dirname + '/../public/ownerLogin.html'));
-        }
-    });
-
-    router.post("/logout", (req, res) => {
-        req.session = null;
-        res.redirect('/admin');
-    });
+    } else {
+      res.render("adminLogin");
 
 
-    return router;
+    }
+
+  });
+
+  router.post("/", (req, res) => {
+    // check inputed password
+    if (req.body.password === "1234") {
+      req.session.isAuthenticated = true;
+      res.render("admin");
+    } else {
+      res.render("adminlogin");
+    }
+  });
+
+  router.post("/logout", (req, res) => {
+    req.session = null;
+    res.redirect('admin');
+  });
+
+
+  return router;
 };
 
