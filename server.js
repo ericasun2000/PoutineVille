@@ -49,7 +49,7 @@ const adminRoutes = require('./routes/admin');
 // Note: Feel free to replace the example routes below with your own
 app.use("/dishes", dishesRoutes(dbHelpers));
 app.use("/orders", orderRoutes(dbHelpers));
-app.use("/admin", adminRoutes());
+app.use("/admin", adminRoutes(dbHelpers));
 // Note: mount other resources here, using the same pattern above
 
 
