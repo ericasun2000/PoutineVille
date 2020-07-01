@@ -37,7 +37,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(cookieSession({
   name: 'session',
   keys: ["hello", "bye"],
-}))
+}));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -54,12 +54,10 @@ app.use("/admin", adminRoutes());
 
 
 
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });
+
+app.get("/", (req, res) => {
+  res.render("index");
+});
 
 
 app.listen(PORT, () => {
