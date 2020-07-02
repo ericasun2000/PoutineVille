@@ -137,51 +137,56 @@ INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(48,3,1,13);
 
 INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(49,6,1,14);
 
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,1,1,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,2,1,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,6,1,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,1,5,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,2,3,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,3,4,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,4,7,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,5,7,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,6,4,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,7,5,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(50,8,6,14);
 
--- July
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,1,15,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,2,8,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,3,17,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,4,12,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,5,20,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,6,25,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,7,22,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,8,28,14);
+-- January
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,1,25,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,2,10,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,3,22,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,4,15,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,5,28,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,6,26,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,7,29,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(51,8,35,14);
 
--- Aug
+-- February
 INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,1,20,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,2,9,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,3,19,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,4,18,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,5,25,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,6,30,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,7,28,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,8,15,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,2,10,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,3,22,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,4,17,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,5,29,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,6,26,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,7,25,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(52,8,30,14);
 
--- Sept
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,1,35,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,2,12,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,3,20,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,4,15,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,5,26,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,6,23,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,7,24,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,8,14,14);
+-- March
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,1,20,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,2,7,10);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,3,16,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,4,14,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,5,19,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,6,22,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,7,13,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(53,8,19,14);
 
--- Oct
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,1,33,10);
+-- April
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,1,30,10);
 INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,2,10,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,3,17,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,4,13,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,5,24,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,6,29,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,7,35,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,8,27,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,3,12,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,4,12,13);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,5,21,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,6,23,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,7,27,14);
+INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(54,8,25,14);
 
--- Nov
+-- May
 INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(55,1,29,10);
 INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(55,2,12,10);
 INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(55,3,18,13);
@@ -191,12 +196,12 @@ INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(55,6,22,14);
 INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(55,7,27,14);
 INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(55,8,30,14);
 
--- Dec
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,1,23,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,2,15,10);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,3,19,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,4,18,13);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,5,27,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,6,17,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,7,23,14);
-INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,8,25,14);
+-- -- July
+-- INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,1,6,10);
+-- INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,2,5,10);
+-- INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,3,3,13);
+-- INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,4,6,13);
+-- INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,5,2,14);
+-- INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,6,2,14);
+-- INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,7,3,14);
+-- INSERT INTO ordered_dishes (order_id,dish_id,quantity,price) VALUES(56,8,4,14);

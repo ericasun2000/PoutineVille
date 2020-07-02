@@ -47,11 +47,11 @@ INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1645601128','2
 INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1234567801','2020-06-27 17:43:00.000000+00','2020-06-27 17:50:00.000000+00');
 INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1234567816','2020-06-27 17:44:00.000000+00','2020-06-27 17:55:00.000000+00'); 
 INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1234567825','2020-06-27 17:47:00.000000+00','2020-06-27 17:58:00.000000+00');
-INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1234567822','2020-06-27 17:50:00.000000+00','2020-06-27 18:00:00.000000+00'); 
-INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641777999','2020-07-01 11:00:00.000000+00','2020-07-01 12:00:00.000000+00');  -- July
-INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641888999','2020-08-01 11:00:00.000000+00','2020-08-01 12:00:00.000000+00');  -- Aug
-INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641779999','2020-09-01 11:00:00.000000+00','2020-09-01 12:00:00.000000+00');  -- Sept
-INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641773333','2020-10-01 11:00:00.000000+00','2020-10-01 12:00:00.000000+00');  -- Oct
-INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641722222','2020-11-01 11:00:00.000000+00','2020-11-01 12:00:00.000000+00');  -- November
-INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641771111','2020-12-01 11:00:00.000000+00','2020-12-01 12:00:00.000000+00');  -- December
+INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1234567822','2020-06-27 17:50:00.000000+00','2020-06-27 18:00:00.000000+00');
+INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641777999','2020-01-01 11:00:00.000000+00','2020-01-01 12:00:00.000000+00');  -- January
+INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641888999','2020-02-01 11:00:00.000000+00','2020-02-01 12:00:00.000000+00');  -- February
+INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641779999','2020-03-01 11:00:00.000000+00','2020-03-01 12:00:00.000000+00');  -- March
+INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641773333','2020-04-01 11:00:00.000000+00','2020-04-01 12:00:00.000000+00');  -- April
+INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641722222','2020-05-01 11:00:00.000000+00','2020-06-01 12:00:00.000000+00');  -- May
+-- INSERT INTO orders (telephone,submitted_at,completed_at) VALUES ('1641771111','2020-07-01 11:00:00.000000+00','2020-07-01 12:00:00.000000+00');  -- July
 
