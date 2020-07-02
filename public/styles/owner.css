@@ -18,6 +18,10 @@ nav > a.navbar-brand {
     color: white;
 }
 
+.active-link {
+    text-decoration: underline;
+}
+
 .logout {
   color: white;
   background: transparent;

@@ -6,5 +6,6 @@ CREATE TABLE dishes (
   name VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
   price INTEGER NOT NULL,
-  image_url VARCHAR(255) NOT NULL
+  image_url VARCHAR(255) NOT NULL,
+  isDeleted BOOLEAN DEFAULT FALSE
 );

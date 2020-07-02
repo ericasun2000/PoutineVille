@@ -3,7 +3,7 @@ const orders = require("../routes/orders");
 module.exports = db => {
   const getDishes = () => {
     const query = {
-      text: `SELECT * FROM dishes ORDER BY id`,
+      text: `SELECT * FROM dishes WHERE isDeleted = false ORDER BY id`,
     };
 
     return db.query(query).then(result => result.rows);
@@ -34,7 +34,7 @@ module.exports = db => {
 
   const deleteDish = (dishId) => {
     const query = {
-      text: `DELETE FROM dishes WHERE id = ${dishId}`
+      text: `UPDATE dishes SET isDeleted = true WHERE id = ${dishId}`
     };
     return db.query(query).then(console.log("deleted"));
   }
