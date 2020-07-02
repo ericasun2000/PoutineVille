@@ -14,7 +14,7 @@ module.exports = db => {
       text:  `SELECT * FROM dishes WHERE id = ${dishId}`
     }
 
-    return db.query(query).then(result => result.rows);
+    return db.query(query).then(result => result.rows[0]);
   }
 
   const addDish = (wantedDishes, orderId) => {

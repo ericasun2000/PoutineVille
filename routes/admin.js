@@ -53,6 +53,17 @@ module.exports = ({getDishes, getDish, deleteDish}) => {
     }
   })
 
+  router.post("display/:id/edut", (req, res) => {
+    if (req.session.isAuthenticated) {
+      const dishId = req.params.id;
+      getDish(dishId)
+      .then(dish => {
+        console.log(dish);
+        res.render("edit", {dish})
+      });
+    }
+  })
+
   router.post("/display/:id/delete", (req, res) => {
     const dishId = req.params.id;
     if (req.session.isAuthenticated) {

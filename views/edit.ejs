@@ -40,12 +40,17 @@
         <thead></thead>
           <tr>
             <th scope="col">Name</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image URL</th>
           </tr>
         </thead>
         <tbody>
-          <p>hello</p>
+          <tr>
+            <td><input type="text" class="form-control" value="<%= dish.name %>"></td>
+            <td><input type="text" class="form-control" value="<%= dish.description %>"></td>
+            <td><input type="text" class="form-control" value="<%= dish.price %>"></td>
+            <td><input type="text" class="form-control" value="<%= dish.image_url %>"></td>
         </tbody>
       </table>
 
