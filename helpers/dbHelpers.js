@@ -63,6 +63,17 @@ module.exports = db => {
     return db.query(query).then(result => result.rows[0]);
   };
 
+  const updateDish = (updatedDish) => {
+    const query = {
+      text: `
+      UPDATE dishes
+      SET name = $1, description = $2,  price = $3, image_url = $4
+      WHERE id = ${updatedDish.id}`,
+      values: [updatedDish.name, updatedDish.description, updatedDish.price, updatedDish.image_url]
+    };
+    return db.query(query).then(console.log("updated"));
+  }
+
   return {
     getDishes,
     getDish,
@@ -70,6 +81,7 @@ module.exports = db => {
     addDish,
     deleteDish,
     findNumber,
-    getOrderById
+    getOrderById,
+    updateDish
   };
 };
