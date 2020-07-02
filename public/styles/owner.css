@@ -6,7 +6,7 @@ body {
 
   }
 
-nav > a.navbar-brand {  
+nav > a.navbar-brand {
     color: white !important;
     font-family: 'Ruthie', cursive;
     font-size: 3rem;
@@ -16,7 +16,11 @@ nav > a.navbar-brand {
 .form-container {
     width: 50%;
     background-color: white;
-    border-radius: 5%;
+}
+
+.display-container {
+  width: 80%;
+  background-color: white;
 }
 
 .form__title {

@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Customized CSS -->
-    <!-- <link rel="stylesheet" href="/styles/owner.css" type="text/css" /> -->
+    <link rel="stylesheet" href="/styles/owner.css" type="text/css" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.pinimg.com/564x/b4/23/b3/b423b3fa98dfe76f9a174049cad6a30d.jpg" />
@@ -28,13 +28,29 @@
 </head>
 
 <body>
-    <header>
-      <nav>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="/">PoutineVille</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-      </nav>
-    </header>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <form method="POST" action="/admin/logout">
+                        <button type="submit" class="btn btn-outline-secondary">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </header>
 
-    <div class="container">
+  <div class="container mb-5">
+    <div class="display-container mt-2 mx-auto p-5">
       <h3>Dishes</h3>
       <table class="table">
         <thead></thead>
@@ -54,9 +70,8 @@
             <% } %>
         </tbody>
       </table>
-
-
     </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
