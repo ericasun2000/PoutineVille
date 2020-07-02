@@ -6,7 +6,7 @@ module.exports = ({ getOrderedDishes, getSalesByMonths }) => {
   router.get("/", (req, res) => {
     //if has cookie
     if (req.session.isAuthenticated) {
-      res.render("admin-order-status");
+      res.render("admin-home");
 
 
     } else {
@@ -21,10 +21,24 @@ module.exports = ({ getOrderedDishes, getSalesByMonths }) => {
     // check inputed password
     if (req.body.password === "1234") {
       req.session.isAuthenticated = true;
-      res.render("admin-order-status");
+      res.redirect("/admin");
     } else {
       res.render("adminlogin");
     }
+  });
+
+  router.get("/orders", (req, res) => {
+    //if has cookie
+    if (req.session.isAuthenticated) {
+      res.render("admin-order-status");
+
+
+    } else {
+      res.render("adminLogin");
+
+
+    }
+
   });
 
   router.get("/analytics", (req, res) => {
