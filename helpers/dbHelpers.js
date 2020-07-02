@@ -9,20 +9,6 @@ module.exports = db => {
     return db.query(query).then(result => result.rows);
   };
 
-  const getOrderedDishes = () => {
-    const query = {
-      text: `
-      SELECT dishes.id, dishes.name, SUM(ordered_dishes.quantity) as sum
-      FROM ordered_dishes
-      JOIN dishes ON ordered_dishes.dish_id = dishes.id
-      GROUP BY dishes.id, dishes.name
-      ORDER BY sum;
-      `,
-    };
-
-    return db.query(query).then(result => result.rows);
-  };
-
   const addDish = (wantedDishes, orderId) => {
     let qs = 'INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES ';
     for (let i = 0; i < wantedDishes.length; i++) {
@@ -63,12 +49,43 @@ module.exports = db => {
     return db.query(query).then(result => result.rows[0]);
   };
 
+  const getOrderedDishes = () => {
+    const query = {
+      text: `
+      SELECT dishes.id, dishes.name, SUM(ordered_dishes.quantity) as sum
+      FROM ordered_dishes
+      JOIN dishes ON ordered_dishes.dish_id = dishes.id
+      GROUP BY dishes.id, dishes.name
+      ORDER BY sum;
+      `,
+    };
+
+    return db.query(query).then(result => result.rows);
+  };
+
+  const getSalesByMonths = () => {
+    const query = {
+      text: `
+      SELECT date_trunc('month', orders.submitted_at) AS month, sum(ordered_dishes.quantity)
+      FROM ordered_dishes
+      JOIN orders ON orders.id = ordered_dishes.order_id
+      GROUP BY date_trunc('month', orders.submitted_at)
+      ORDER BY month;
+      `,
+    };
+
+    return db.query(query).then(result => result.rows);
+  };
+
+
+
   return {
     getDishes,
-    getOrderedDishes,
     addOrder,
     addDish,
     findNumber,
-    getOrderById
+    getOrderById,
+    getOrderedDishes,
+    getSalesByMonths
   };
 };
