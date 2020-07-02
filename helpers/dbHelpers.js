@@ -1,11 +1,8 @@
-const orders = require("../routes/orders");
-
 module.exports = db => {
   const getDishes = () => {
     const query = {
       text: `SELECT * FROM dishes WHERE isDeleted = false ORDER BY id`,
     };
-
     return db.query(query).then(result => result.rows);
   };
 
@@ -13,10 +10,9 @@ module.exports = db => {
     const query = {
       text:  `SELECT * FROM dishes WHERE id = $1`,
       values: [dishId]
-    }
-
+    };
     return db.query(query).then(result => result.rows[0]);
-  }
+  };
 
   const addDish = (wantedDishes, orderId) => {
     let qs = 'INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES ';
@@ -28,7 +24,6 @@ module.exports = db => {
         qs += `(${wantedDishes[i].id}, ${orderId}, ${wantedDishes[i].quantity}, ${wantedDishes[i].price}), `;
       }
     }
-    // qs += 'RETURNING order_id';
     return db.query(qs).then(() => orderId);
   };
 
@@ -37,7 +32,7 @@ module.exports = db => {
       text: `UPDATE dishes SET isDeleted = true WHERE id = ${dishId}`
     };
     return db.query(query).then(console.log("deleted"));
-  }
+  };
 
   const getOrderById = (orderId) => {
     console.log("inside get order id :", orderId);
@@ -74,7 +69,6 @@ module.exports = db => {
       ORDER BY sum;
       `,
     };
-
     return db.query(query).then(result => result.rows);
   };
 
@@ -88,23 +82,22 @@ module.exports = db => {
       ORDER BY month;
       `,
     };
-
     return db.query(query).then(result => result.rows);
   };
 
-  const orderCompleted =(orderId) => {
+  const orderCompleted = (orderId) => {
     const query = {
       text: `UPDATE  orders SET completed_at = NOW() WHERE id=$1`,
       values: [orderId]
     };
     return db.query(query);
-
   };
 
   const uncompletedOrders = () => {
-    const query =" SELECT id FROM orders WHERE completed_at IS NULL";
+    const query = " SELECT id FROM orders WHERE completed_at IS NULL";
     return db.query(query).then(results => results.rows);
   };
+
   const updateDish = (dishId, updatedDish) => {
     const query = {
       text: `
@@ -114,7 +107,7 @@ module.exports = db => {
       values:[updatedDish.name, updatedDish.description, updatedDish.price, updatedDish.image_url, dishId]
     };
     return db.query(query).then(console.log("updated"));
-  }
+  };
 
   return {
     getDishes,

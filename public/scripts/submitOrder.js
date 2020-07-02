@@ -1,6 +1,6 @@
-const submitOrder = function () {
+const submitOrder = function() {
   toastr.options.positionClass = "toast-top-center";
-  $('.order-form').on('submit', function (event) {
+  $('.order-form').on('submit', function(event) {
     event.preventDefault();
     console.log('hello');
 
@@ -27,7 +27,7 @@ const submitOrder = function () {
   );
 };
 
-const getOrderInfo = function () {
+const getOrderInfo = function() {
   const inputArray = $('.quantity');
 
   const wantedDishes = [];
@@ -45,7 +45,7 @@ const getOrderInfo = function () {
   return wantedDishes;
 };
 
-const createOrderObj = function () {
+const createOrderObj = function() {
   const wantedDishes = getOrderInfo();
   const phoneNumber = $('#phone-number').val();
 

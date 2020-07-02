@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 
 module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, deleteDish, updateDish }) => {
   router.get("/", (req, res) => {
@@ -37,9 +36,9 @@ module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, dele
       getOrderedDishes()
         .then(totalOrderedDishes => res.json(totalOrderedDishes))
         .catch(err => res.status(500).json({ error: err.message })
-        )
+        );
     } else {
-      res.status(401).json({ error: 'You do not have permission to access this.' })
+      res.status(401).json({ error: 'You do not have permission to access this.' });
     }
 
   });
@@ -49,9 +48,9 @@ module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, dele
       getSalesByMonths()
         .then(totalOrderedDishes => res.json(totalOrderedDishes))
         .catch(err => res.status(500).json({ error: err.message })
-        )
+        );
     } else {
-      res.status(401).json({ error: 'You do not have permission to access this.' })
+      res.status(401).json({ error: 'You do not have permission to access this.' });
     }
 
   });
@@ -65,9 +64,9 @@ module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, dele
     if (req.session.isAuthenticated) {
       getDishes()
       // .then(dishes => console.log(dishes[0].name))
-      .then(dishes => {
-        res.render("display", {dishes,  page: 'display' });
-      })
+        .then(dishes => {
+          res.render("display", {dishes,  page: 'display' });
+        });
     } else {
       res.redirect("/admin");
     }
@@ -77,35 +76,35 @@ module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, dele
     if (req.session.isAuthenticated) {
       const dishId = req.params.id;
       getDish(dishId)
-      .then(dish => res.render("edit", {dish}))
+        .then(dish => res.render("edit", {dish}));
     } else {
       res.redirect("/admin");
     }
-  })
+  });
 
   router.post("/display/:id/edit", (req, res) => {
     if (req.session.isAuthenticated) {
       const dishId = req.params.id;
       const updatedDish = req.body.updatedDish;
       updateDish(dishId, updatedDish)
-      .then(res.redirect("/admin/display"))
-      .catch(err => console.log(err));
+        .then(res.redirect("/admin/display"))
+        .catch(err => console.log(err));
 
     } else {
       res.redirect("/admin");
     }
-  })
+  });
 
   router.post("/display/:id/delete", (req, res) => {
     const dishId = req.params.id;
     if (req.session.isAuthenticated) {
       deleteDish(dishId)
-      .then(res.redirect("/admin/display"))
-      .catch(err => console.log(err));
+        .then(res.redirect("/admin/display"))
+        .catch(err => console.log(err));
     } else {
       res.redirect("/admin");
     }
-  })
+  });
 
   return router;
 };

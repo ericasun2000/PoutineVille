@@ -10,7 +10,8 @@ module.exports = ({ findNumber,addOrder,addDish,getOrderById,orderCompleted,unco
       .then(id => addDish(wantedDishes, id))
       .then(id =>  {
         res.send({message:"ok"});
-        return getOrderById(id)})
+        return getOrderById(id);
+      })
       .then(order => sendSMSToOwner(order))
       .catch(() => res.status(500).send("An error occured"));
   });
