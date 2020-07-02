@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 // const { getDishes } = require('../helpers/dbHelpers')
 
-module.exports = ({getDishes}) => {
+module.exports = ({getDishes, deleteDish}) => {
   router.get("/", (req, res) => {
     //if has cookie
     if (req.session.isAuthenticated) {
@@ -32,12 +32,35 @@ module.exports = ({getDishes}) => {
   });
 
   router.get("/display", (req, res) => {
-    getDishes()
-    // .then(dishes => console.log(dishes[0].name))
-    .then(dishes => {
-      res.render("display", {dishes});
-    })
+    if (req.session.isAuthenticated) {
+      getDishes()
+      // .then(dishes => console.log(dishes[0].name))
+      .then(dishes => {
+        res.render("display", {dishes});
+      })
+    } else {
+      res.redirect("/admin");
+    }
   });
+
+  router.get("/display/:dishId/edit", (req, res) => {
+    if (req.session.isAuthenticated) {
+      res.render("displayEdit");
+    } else {
+      res.redirect("/admin/display");
+    }
+  })
+
+  router.post("/display/:id/delete", (req, res) => {
+    const dishId = req.params.id;
+    if (req.session.isAuthenticated) {
+      deleteDish(dishId)
+      .then(res.redirect("/admin/display"))
+      .catch(err => console.log(err));
+    } else {
+      res.redirect("/admin");
+    }
+  })
 
 
 
