@@ -21,8 +21,14 @@ module.exports = db => {
     }
     // qs += 'RETURNING order_id';
     return db.query(qs).then(() => orderId);
-
   };
+
+  const deleteDish = (dishId) => {
+    const query = {
+      text: `DELETE FROM dishes WHERE id = ${dishId}`
+    };
+    return db.query(query).then(console.log("deleted"));
+  }
 
   const getOrderById = (orderId) => {
     console.log("inside get order id :",orderId);
@@ -53,6 +59,7 @@ module.exports = db => {
     getDishes,
     addOrder,
     addDish,
+    deleteDish,
     findNumber,
     getOrderById
   };

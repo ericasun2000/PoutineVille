@@ -47,9 +47,9 @@
         <tbody>
           <% for(let dish of dishes) { %>
             <tr>
-              <td><%= dish.name %></td>
-              <td><form method="GET" action="/display/edit"><button type="submit" class="btn btn-outline-primary">Edit</button></form></td>
-              <td><form method="POST" action="/display/delete"><button type="submit" class="btn btn-outline-danger">Delete</button></form></td>
+              <td><%= dish.name, dish.id %></td>
+              <td><form method="GET" action="/admin/display/<%= dish.id %>/edit"><button type="submit" class="btn btn-outline-primary">Edit</button></form></td>
+              <td><form method="POST" action="/admin/display/<%= dish.id %>/delete"><button type="submit" class="btn btn-outline-danger">Delete</button></form></td>
             </tr>
             <% } %>
         </tbody>
