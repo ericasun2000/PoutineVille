@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-// const { getDishes } = require('../helpers/dbHelpers')
 
 module.exports = ({getDishes, getDish, deleteDish, updateDish}) => {
   router.get("/", (req, res) => {
@@ -55,8 +54,9 @@ module.exports = ({getDishes, getDish, deleteDish, updateDish}) => {
 
   router.post("/display/:id/edit", (req, res) => {
     if (req.session.isAuthenticated) {
+      const dishId = req.params.id;
       const updatedDish = req.body.updatedDish;
-      updateDish(updatedDish)
+      updateDish(dishId, updatedDish)
       .then(res.redirect("/admin/display"))
       .catch(err => console.log(err));
 
