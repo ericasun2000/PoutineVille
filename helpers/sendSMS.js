@@ -30,5 +30,4 @@ const sendSMSToOwner = (order) => {
   sendSMS(process.env.TWILIO_OWNER, msg);
 };
 
-
 module.exports = { sendSMS, sendSMSToOwner };

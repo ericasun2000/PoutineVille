@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-
 module.exports = ({ getDishes}) => {
   router.get("/", (req, res) => {
     getDishes()

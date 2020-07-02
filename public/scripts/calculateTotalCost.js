@@ -1,5 +1,5 @@
 const calculateTotalCost = function() {
-  const total = function () {
+  const total = function() {
     const InputArray = $(".quantity");
     let total = 0;
     for (const input of InputArray) {
@@ -13,5 +13,5 @@ const calculateTotalCost = function() {
 
   $(".plus").on("click",total);
 
-$(".minus").on("click",total);
+  $(".minus").on("click",total);
 };

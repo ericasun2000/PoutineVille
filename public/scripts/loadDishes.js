@@ -1,4 +1,4 @@
-const loadDishes = function () {
+const loadDishes = function() {
   $.ajax({
     method: "GET",
     url: "/dishes",
@@ -8,13 +8,13 @@ const loadDishes = function () {
     .then(()=>calculateTotalCost());
 };
 
-const renderDishes = function (dishes) {
+const renderDishes = function(dishes) {
   for (const dish of dishes) {
     $(".row").append(createDishElement(dish));
   }
 };
 
-const createDishElement = function (dishElement) {
+const createDishElement = function(dishElement) {
   const dish = `
     <div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-5 align-item-center d-flex justify-content-center'>
                   <div class="card h-100 m-2" style="width: 18rem;">

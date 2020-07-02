@@ -1,9 +1,9 @@
 $(() => {
-    const backToTopBtn = $('#back-to-top-btn');
+  const backToTopBtn = $('#back-to-top-btn');
 
-    backToTopBtn.click(function () {
-        $([document.documentElement, document.body]).animate({
-            scrollTop: 0
-        }, 1500);
-    });
+  backToTopBtn.click(function() {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: 0
+    }, 1500);
+  });
 });
