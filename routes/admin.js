@@ -7,8 +7,6 @@ module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, dele
     //if has cookie
     if (req.session.isAuthenticated) {
       res.render("admin-order-status");
-
-
     } else {
       res.render("adminLogin");
     }
@@ -24,15 +22,6 @@ module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, dele
       res.render("adminlogin");
     }
   });
-
-  // router.get("/orders", (req, res) => {
-  //   //if has cookie
-  //   if (req.session.isAuthenticated) {
-  //     res.render("admin-order-status");
-  //   } else {
-  //     res.render("adminLogin");
-  //   }
-  // });
 
   router.get("/analytics", (req, res) => {
     if (req.session.isAuthenticated) {
