@@ -9,6 +9,14 @@ module.exports = db => {
     return db.query(query).then(result => result.rows);
   };
 
+  const getDish = (dishId) => {
+    const query = {
+      text:  `SELECT * FROM dishes WHERE id = ${dishId}`
+    }
+
+    return db.query(query).then(result => result.rows);
+  }
+
   const addDish = (wantedDishes, orderId) => {
     let qs = 'INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES ';
     for (let i = 0; i < wantedDishes.length; i++) {
@@ -57,6 +65,7 @@ module.exports = db => {
 
   return {
     getDishes,
+    getDish,
     addOrder,
     addDish,
     deleteDish,
