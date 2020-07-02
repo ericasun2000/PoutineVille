@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-module.exports = ({ getOrderedDishes }) => {
+module.exports = ({ getOrderedDishes, getSalesByMonths }) => {
   router.get("/", (req, res) => {
     //if has cookie
     if (req.session.isAuthenticated) {
@@ -27,7 +27,16 @@ module.exports = ({ getOrderedDishes }) => {
     }
   });
 
-  router.get("/analysis/overallsales", (req, res) => {
+  router.get("/analytics", (req, res) => {
+    if (req.session.isAuthenticated) {
+      res.render("analytics");
+    } else {
+      res.redirect("/admin");
+
+    }
+  });
+
+  router.get("/analytics/overall_sales", (req, res) => {
     if (req.session.isAuthenticated) {
       getOrderedDishes()
         .then(totalOrderedDishes => res.json(totalOrderedDishes))
@@ -39,13 +48,16 @@ module.exports = ({ getOrderedDishes }) => {
 
   });
 
-  router.get("/analytics", (req, res) => {
+  router.get("/analytics/sales_by_months", (req, res) => {
     if (req.session.isAuthenticated) {
-      res.render("analytics");
+      getSalesByMonths()
+        .then(totalOrderedDishes => res.json(totalOrderedDishes))
+        .catch(err => res.status(500).json({ error: err.message })
+        )
     } else {
-      res.redirect("/admin");
-
+      res.status(401).json({ error: 'You do not have permission to access this.' })
     }
+
   });
 
   router.post("/logout", (req, res) => {
