@@ -143,7 +143,7 @@ const generateLineChart = (salesByMonthsData) => {
             },
             title: {
                 display: true,
-                text: 'Sales of PoutineVille by Months'
+                text: 'Sales of PoutineVille over the Months'
             },
             scales: {
                 yAxes: [{
