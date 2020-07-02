@@ -6,20 +6,20 @@ body {
 
   }
 
-nav > a.navbar-brand {  
+nav > a.navbar-brand {
     color: white !important;
     font-family: 'Ruthie', cursive;
     font-size: 3rem;
     letter-spacing: 0.15rem;
 }
 
-.form-container {
+.container {
     width: 50%;
     background-color: white;
     border-radius: 5%;
 }
 
-.form__title {
+.title {
     font-weight: 700;
 }
 
