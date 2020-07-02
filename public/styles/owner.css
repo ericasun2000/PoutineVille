@@ -18,7 +18,11 @@ nav > a.navbar-brand {
     color: white;
 }
 
-.active-link {
+/* .custom-link:hover {
+    color: rgb(62,0,0) !important;
+} */
+
+.selected-link {
     text-decoration: underline;
 }
 
