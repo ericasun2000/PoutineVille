@@ -1,4 +1,4 @@
-const loaduncompletedOrders = () => {
+const loadUncompletedOrders = () => {
   const time = 0.5 * 60 * 1000; // minutes * 60s/min * 1000ms/s
 
   $.ajax({
@@ -11,7 +11,7 @@ const loaduncompletedOrders = () => {
 
     },
 
-    complete:() => setTimeout(loaduncompletedOrders,time)
+    complete:() => setTimeout(loadUncompletedOrders,time)
   });
 };
 const renderOrders = function(orders) {
