@@ -1,5 +1,5 @@
 const loaduncompletedOrders = () => {
-  const time = 1 * 60 * 1000; // minutes * 60s/min * 1000ms/s
+  const time = 0.5 * 60 * 1000; // minutes * 60s/min * 1000ms/s
 
   $.ajax({
     method: "GET",
