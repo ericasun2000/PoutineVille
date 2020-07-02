@@ -3,7 +3,7 @@ let chart = new Chart(ctx, {});
 
 const generateBarChart = (dishArr) => {
     chart.destroy();
-    const resultObj = generateArrays(dishArr);
+    const resultObj = createObjForBarChart(dishArr);
 
     const backgroundColors = ['rgb(250,213,92)', 'rgb(38,125,179)', 'rgb(133,97,200)', 'rgb(237,102,71)', 'rgb(109,219,219)', 'rgb(104,193,130)', 'rgb(150, 139, 195)', 'rgb(227,113,178)']
 
@@ -53,7 +53,9 @@ const generateBarChart = (dishArr) => {
 
 }
 
-const generateArrays = (dishArr) => {
+// create a obj with 2 arrays
+// labelArr and sumArr for barChart
+const createObjForBarChart = (dishArr) => {
     const labelArr = [];
     const sumArr = [];
 
@@ -68,19 +70,107 @@ const generateArrays = (dishArr) => {
     }
 }
 
+// ajax GET request to get all ordered dishes 
 const getOverallSales = () => {
-    $.get('/admin/analysis/overallsales', function (dishArr) {
-        generateBarChart(dishArr);
+    $.get('/admin/analytics/overall_sales', function (overallSalesData) {
+        generateBarChart(overallSalesData);
     })
-        .done(() => console.log('Done with AJAX GET request'))
+        .done(() => console.log('Done with AJAX GET overallsales request'))
         .fail(() => console.log('Oops! Problem with GET overallsales request'));
 }
 
+const getMonth = (numStr) => {
+    const months = {
+        '01': 'January',
+        '02': 'February',
+        '03': 'March',
+        '04': 'April',
+        '05': 'May',
+        '06': 'June',
+        '07': 'July',
+        '08': 'August',
+        '09': 'September',
+        '10': 'October',
+        '11': 'November',
+        '12': 'December',
+    }
+
+    return months[numStr];
+}
+
+const createObjForLineChart = (salesByMonthsData) => {
+    const months = [];
+    const data = [];
+
+    for (let monthData of salesByMonthsData) {
+        months.push(getMonth(monthData.month.substring(5, 7)));
+        data.push(monthData.sum);
+    }
+
+    return {
+        months,
+        data
+    }
+}
+
+const generateLineChart = (salesByMonthsData) => {
+    const resultObj = createObjForLineChart(salesByMonthsData);
+
+    chart.destroy();
+
+    chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: resultObj.months,
+            datasets: [{
+                // backgroundColor: 'rgb(0,48,107)',
+                data: resultObj.data,
+                borderColor: '#55bae7',
+                fill: false,
+                label: 'Quantity',
+                pointBorderColor: "rgb(0,48,107)",
+                pointHoverBackgroundColor: "rgb(0,48,107)",
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: 'Sales of PoutineVille by Months'
+            },
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Quantity'
+                    },
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Months'
+                    },
+                }]
+            }
+        }
+    });
+
+}
+
+// ajax GET request to get ordered dishes group by months
 const getSalesOverMonths = () => {
-    $.get('/admin/analysis/salesovermonths', function (dishArr) {
-        generateLineChart(dishArr);
+    $.get('/admin/analytics/sales_by_months', function (salesByMonthsData) {
+        console.log(salesByMonthsData);
+        generateLineChart(salesByMonthsData);
     })
-        .done(() => console.log('Done with AJAX GET request'))
+        .done(() => console.log('Done with AJAX GET salesovermonths data request'))
         .fail(() => console.log('Oops! Problem with GET salesovermonths data request'));
 }
 
