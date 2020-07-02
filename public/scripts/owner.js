@@ -3,6 +3,7 @@
 $(document).ready(function() {
   // postion notification top center of page
   toastr.options.positionClass = "toast-top-center";
+  loaduncompletedOrders();
 
   $("input[type='radio']").click(function() {
     if ($("#order-ready").is(":checked")) {
@@ -18,11 +19,13 @@ $(document).ready(function() {
     event.preventDefault();
     const orderID = Number($("#order-id").val());
     const message = createMessage();
+    const status = $("#order-ready").is(":checked");
+    console.log("status",status);
 
     $.ajax({
       url: "/orders/status",
       method: "POST",
-      data: JSON.stringify({orderID,message}),
+      data: JSON.stringify({orderID,message,status}),
       contentType: "application/json; charset=utf-8",
       dataType: "json"
     }).then(() => {

@@ -79,6 +79,20 @@ module.exports = db => {
 
 
 
+  const orderCompleted =(orderId) => {
+    const query = {
+      text: `UPDATE  orders SET completed_at = NOW() WHERE id=$1`,
+      values: [orderId]
+    };
+    return db.query(query);
+
+  };
+
+  const uncompletedOrders = () => {
+    const query =" SELECT id FROM orders WHERE completed_at IS NULL";
+    return db.query(query).then(results => results.rows);
+  };
+
   return {
     getDishes,
     addOrder,
@@ -86,6 +100,8 @@ module.exports = db => {
     findNumber,
     getOrderById,
     getOrderedDishes,
-    getSalesByMonths
+    getSalesByMonths,
+    orderCompleted,
+    uncompletedOrders
   };
 };
