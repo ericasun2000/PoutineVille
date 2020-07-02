@@ -3,7 +3,7 @@ const orders = require("../routes/orders");
 module.exports = db => {
   const getDishes = () => {
     const query = {
-      text: `SELECT * FROM dishes`,
+      text: `SELECT * FROM dishes ORDER BY id`,
     };
 
     return db.query(query).then(result => result.rows);
@@ -11,7 +11,8 @@ module.exports = db => {
 
   const getDish = (dishId) => {
     const query = {
-      text:  `SELECT * FROM dishes WHERE id = ${dishId}`
+      text:  `SELECT * FROM dishes WHERE id = $1`,
+      values: [dishId]
     }
 
     return db.query(query).then(result => result.rows[0]);
@@ -63,13 +64,13 @@ module.exports = db => {
     return db.query(query).then(result => result.rows[0]);
   };
 
-  const updateDish = (updatedDish) => {
+  const updateDish = (dishId, updatedDish) => {
     const query = {
       text: `
       UPDATE dishes
       SET name = $1, description = $2,  price = $3, image_url = $4
-      WHERE id = ${updatedDish.id}`,
-      values: [updatedDish.name, updatedDish.description, updatedDish.price, updatedDish.image_url]
+      WHERE id = $5`,
+      values:[updatedDish.name, updatedDish.description, updatedDish.price, updatedDish.image_url, dishId]
     };
     return db.query(query).then(console.log("updated"));
   }
