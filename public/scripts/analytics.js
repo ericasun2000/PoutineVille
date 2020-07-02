@@ -7,7 +7,6 @@ const generateBarChart = (dishArr) => {
 
     const backgroundColors = ['rgb(250,213,92)', 'rgb(38,125,179)', 'rgb(133,97,200)', 'rgb(237,102,71)', 'rgb(109,219,219)', 'rgb(104,193,130)', 'rgb(150, 139, 195)', 'rgb(227,113,178)']
 
-    // const ctx = document.getElementById('myChart').getContext('2d');
     chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'bar',
@@ -29,7 +28,7 @@ const generateBarChart = (dishArr) => {
             },
             title: {
                 display: true,
-                text: 'Sales of PoutineVille'
+                text: 'Total Poutine Sales'
             },
             scales: {
                 yAxes: [{
@@ -143,7 +142,7 @@ const generateLineChart = (salesByMonthsData) => {
             },
             title: {
                 display: true,
-                text: 'Sales of PoutineVille over the Months'
+                text: 'Monthly Poutine Sales'
             },
             scales: {
                 yAxes: [{
