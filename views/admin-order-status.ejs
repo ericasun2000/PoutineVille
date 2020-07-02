@@ -48,17 +48,18 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
-      <div>
-        <h3 class="text-center"> Uncompleted Orders</h3>
+      <div class="d-flex flex-column justify-content-center  mt-5 mx-auto p-5">
+        <h3 class="text-center title"> Uncompleted Orders</h3>
         <ul id="uncompleted-orders"></ul>
       </div>
     </div>
 
     <div class="container">
-        <div class="d-flex flex-column justify-content-center form-container mt-5 mx-auto">
+        <div class="d-flex flex-column justify-content-center  mt-5 mx-auto ">
             <form action='/orders/status' method='POST' class="owner-form p-5">
-                <h3 class="form__title text-center">Order Status Form</h3>
+                <h3 class="title text-center">Order Status Form</h3>
                 <label for="order-id">Order ID :</label><br>
                 <input type="number" min="1" class="order-text mb-4" id="order-id" name="order-id" required><br>
 
