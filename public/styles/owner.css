@@ -4,7 +4,8 @@ body {
     background: linear-gradient(to bottom, #b20a2c, #fffbd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: 'Lato', sans-serif;
     min-height: 100vh;
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
 nav > a.navbar-brand {
@@ -17,10 +18,6 @@ nav > a.navbar-brand {
 .navbar-light .navbar-nav .nav-link {
     color: white;
 }
-
-/* .custom-link:hover {
-    color: rgb(62,0,0) !important;
-} */
 
 .selected-link {
     text-decoration: underline;
