@@ -1,10 +1,14 @@
-const generateChart = (dishArr) => {
+const ctx = document.getElementById('myChart').getContext('2d');
+let chart = new Chart(ctx, {});
+
+const generateBarChart = (dishArr) => {
+    chart.destroy();
     const resultObj = generateArrays(dishArr);
 
     const backgroundColors = ['rgb(250,213,92)', 'rgb(38,125,179)', 'rgb(133,97,200)', 'rgb(237,102,71)', 'rgb(109,219,219)', 'rgb(104,193,130)', 'rgb(150, 139, 195)', 'rgb(227,113,178)']
 
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const chart = new Chart(ctx, {
+    // const ctx = document.getElementById('myChart').getContext('2d');
+    chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'bar',
 
@@ -64,10 +68,33 @@ const generateArrays = (dishArr) => {
     }
 }
 
-$(document).ready(function () {
-    $.get('/admin/analysisData', function (dishArr) {
-        generateChart(dishArr);
+const getOverallSales = () => {
+    $.get('/admin/analysis/overallsales', function (dishArr) {
+        generateBarChart(dishArr);
     })
         .done(() => console.log('Done with AJAX GET request'))
-        .fail(() => console.log('Oops! Problem with GET  request'));
+        .fail(() => console.log('Oops! Problem with GET overallsales request'));
+}
+
+const getSalesOverMonths = () => {
+    $.get('/admin/analysis/salesovermonths', function (dishArr) {
+        generateLineChart(dishArr);
+    })
+        .done(() => console.log('Done with AJAX GET request'))
+        .fail(() => console.log('Oops! Problem with GET salesovermonths data request'));
+}
+
+$(document).ready(function () {
+    getOverallSales();
+
+    const overSalesBtn = $('#overallSales-btn');
+
+    overSalesBtn.click(function () {
+        getOverallSales();
+    })
+
+    const salesOverMonthsBtn = $('#sales-months-btn');
+    salesOverMonthsBtn.click(function () {
+        getSalesOverMonths();
+    })
 })
