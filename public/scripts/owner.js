@@ -3,6 +3,7 @@
 $(document).ready(function() {
   // postion notification top center of page
   toastr.options.positionClass = "toast-top-center";
+  loaduncompletedOrders();
 
   $("input[type='radio']").click(function() {
     if ($("#order-ready").is(":checked")) {
