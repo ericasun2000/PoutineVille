@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Customized CSS -->
-    <!-- <link rel="stylesheet" href="/styles/owner.css" type="text/css" /> -->
+    <link rel="stylesheet" href="/styles/edit.css" type="text/css" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.pinimg.com/564x/b4/23/b3/b423b3fa98dfe76f9a174049cad6a30d.jpg" />
@@ -35,7 +35,26 @@
     </header>
 
     <div class="container">
-      <h3>Dishes</h3>
+      <h3>Edit Dish</h3>
+      <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <td><input style="width:100%" type="text" value="<%= dish.name %>"></td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td><input style="width:100%" type="text" value="<%= dish.description %>"></td>
+        </tr>
+        <tr>
+          <th>Price</th>
+          <td><input style="width:100%" type="text" value="<%= dish.price %>"></td>
+        </tr>
+        <tr>
+          <th>Image URL</th>
+          <td><input style="width:100%" type="text" value="<%= dish.image_url %>"></td>
+        </tr>
+      </table>
+      <!--
       <table class="table">
         <thead></thead>
           <tr>
@@ -47,12 +66,12 @@
         </thead>
         <tbody>
           <tr>
-            <td><input type="text" class="form-control" value="<%= dish.name %>"></td>
-            <td><input type="text" class="form-control" value="<%= dish.description %>"></td>
-            <td><input type="text" class="form-control" value="<%= dish.price %>"></td>
-            <td><input type="text" class="form-control" value="<%= dish.image_url %>"></td>
+            <td><input onkeyup="textAreaAdjust(this)" style="overflow:hidden" type="text" value="<%= dish.name %>"></td>
+            <td><textarea onload="textAreaAdjust(this)" style="overflow:hidden" type="text"><%= dish.description %></textarea></td>
+            <td><input onkeyup="textAreaAdjust(this)" style="overflow:hidden" type="text" value="<%= dish.price %>"></td>
+            <td><input onkeyup="textAreaAdjust(this)" style="overflow:hidden" type="text" value="<%= dish.image_url %>"></td>
         </tbody>
-      </table>
+      </table> -->
 
 
     </div>
@@ -70,7 +89,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript" src="./scripts/owner.js"></script> -->
+    <script type="text/javascript" src="/scripts/editDish.js"></script>
 
 </body>
 
