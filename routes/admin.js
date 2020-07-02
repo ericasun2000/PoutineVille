@@ -27,7 +27,7 @@ module.exports = ({ getOrderedDishes }) => {
     }
   });
 
-  router.get("/analysisData", (req, res) => {
+  router.get("/analysis/overallsales", (req, res) => {
     if (req.session.isAuthenticated) {
       getOrderedDishes()
         .then(totalOrderedDishes => res.json(totalOrderedDishes))
