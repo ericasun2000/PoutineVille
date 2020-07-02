@@ -16,7 +16,11 @@ nav > a.navbar-brand {
 .container {
     width: 50%;
     background-color: white;
-    border-radius: 5%;
+}
+
+.display-container {
+  width: 80%;
+  background-color: white;
 }
 
 .title {
