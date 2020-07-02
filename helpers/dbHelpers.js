@@ -3,11 +3,20 @@ const orders = require("../routes/orders");
 module.exports = db => {
   const getDishes = () => {
     const query = {
-      text: `SELECT * FROM dishes`,
+      text: `SELECT * FROM dishes ORDER BY id`,
     };
 
     return db.query(query).then(result => result.rows);
   };
+
+  const getDish = (dishId) => {
+    const query = {
+      text:  `SELECT * FROM dishes WHERE id = $1`,
+      values: [dishId]
+    }
+
+    return db.query(query).then(result => result.rows[0]);
+  }
 
   const addDish = (wantedDishes, orderId) => {
     let qs = 'INSERT INTO ordered_dishes(dish_id, order_id, quantity, price) VALUES ';
@@ -21,8 +30,14 @@ module.exports = db => {
     }
     // qs += 'RETURNING order_id';
     return db.query(qs).then(() => orderId);
-
   };
+
+  const deleteDish = (dishId) => {
+    const query = {
+      text: `DELETE FROM dishes WHERE id = ${dishId}`
+    };
+    return db.query(query).then(console.log("deleted"));
+  }
 
   const getOrderById = (orderId) => {
     console.log("inside get order id :", orderId);
@@ -77,8 +92,6 @@ module.exports = db => {
     return db.query(query).then(result => result.rows);
   };
 
-
-
   const orderCompleted =(orderId) => {
     const query = {
       text: `UPDATE  orders SET completed_at = NOW() WHERE id=$1`,
@@ -92,16 +105,29 @@ module.exports = db => {
     const query =" SELECT id FROM orders WHERE completed_at IS NULL";
     return db.query(query).then(results => results.rows);
   };
+  const updateDish = (dishId, updatedDish) => {
+    const query = {
+      text: `
+      UPDATE dishes
+      SET name = $1, description = $2,  price = $3, image_url = $4
+      WHERE id = $5`,
+      values:[updatedDish.name, updatedDish.description, updatedDish.price, updatedDish.image_url, dishId]
+    };
+    return db.query(query).then(console.log("updated"));
+  }
 
   return {
     getDishes,
+    getDish,
     addOrder,
     addDish,
+    deleteDish,
     findNumber,
     getOrderById,
     getOrderedDishes,
     getSalesByMonths,
     orderCompleted,
-    uncompletedOrders
+    uncompletedOrders,
+    updateDish
   };
 };
