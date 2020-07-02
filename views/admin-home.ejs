@@ -17,6 +17,7 @@
 
     <!-- Customized CSS -->
     <link rel="stylesheet" href="/styles/owner.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/admin-home.css" type="text/css" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.pinimg.com/564x/b4/23/b3/b423b3fa98dfe76f9a174049cad6a30d.jpg" />
@@ -26,16 +27,34 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-light">
-            <a class="navbar-brand" href="/">PoutineVille</a>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="/">PoutineVille</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="container">
-      <a class="btn btn-primary" href="/admin/orders" >Orders Status Form</a>
-      <a class="btn btn-primary" href="/admin/analytics" >Analytics</a>
-      <a class="btn btn-primary" href="" >Edit Dishes</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <form method="POST" action="/admin/logout">
+                        <button type="submit" class="btn btn-outline-secondary">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div id="admin-links">
+
+        <a class="nav-link " href="/admin/orders" >Orders Status Form</a>
+        <a class="nav-link" href="/admin/analytics" >Analytics</a>
+        <a class="nav-link" href="/admin/display" >Display  Dishes</a>
+
+
     </div>
 
 

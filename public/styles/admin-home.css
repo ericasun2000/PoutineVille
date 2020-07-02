@@ -1,0 +1,12 @@
+#admin-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height:100vh;
+}
+
+a {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: white;
+}
