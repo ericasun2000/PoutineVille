@@ -8,7 +8,7 @@ module.exports = db => {
 
   const getDish = (dishId) => {
     const query = {
-      text:  `SELECT * FROM dishes WHERE id = $1`,
+      text: `SELECT * FROM dishes WHERE id = $1`,
       values: [dishId]
     };
     return db.query(query).then(result => result.rows[0]);
@@ -104,9 +104,20 @@ module.exports = db => {
       UPDATE dishes
       SET name = $1, description = $2,  price = $3, image_url = $4
       WHERE id = $5`,
-      values:[updatedDish.name, updatedDish.description, updatedDish.price, updatedDish.image_url, dishId]
+      values: [updatedDish.name, updatedDish.description, updatedDish.price, updatedDish.image_url, dishId]
     };
     return db.query(query).then(console.log("updated"));
+  };
+
+  const addNewDish = (newDish) => {
+    const query = {
+      text: `
+      INSERT INTO dishes (name,description,price,image_url)
+      VALUES ($1, $2, $3, $4);
+      `,
+      values: [newDish.name, newDish.description, newDish.price, newDish.image_url]
+    };
+    return db.query(query).then(console.log("added new dish"));
   };
 
   return {
@@ -121,6 +132,7 @@ module.exports = db => {
     getSalesByMonths,
     orderCompleted,
     uncompletedOrders,
-    updateDish
+    updateDish,
+    addNewDish
   };
 };
