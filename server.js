@@ -52,13 +52,9 @@ app.use("/orders", orderRoutes(dbHelpers));
 app.use("/admin", adminRoutes(dbHelpers));
 // Note: mount other resources here, using the same pattern above
 
-
-
-
 app.get("/", (req, res) => {
   res.render("index");
 });
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
