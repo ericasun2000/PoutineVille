@@ -26,7 +26,7 @@ Order submission notification
 
 ![Show order submission notification](docx/takingOrder.gif)
 
-Owner SMS & Customer SMS
+Owner SMS and Customer SMS
 
 <p>
     <img src="docx/owner.PNG" alt="drawing" width="200"/>
