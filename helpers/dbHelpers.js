@@ -113,7 +113,7 @@ module.exports = db => {
     const query = {
       text: `
       INSERT INTO dishes (name,description,price,image_url)
-      VALUES ($1, $2, $3, $4);
+      VALUES ($1, $2, $3, $4) RETURNING *;
       `,
       values: [newDish.name, newDish.description, newDish.price, newDish.image_url]
     };
