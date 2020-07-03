@@ -22,10 +22,25 @@ Empty cart notification
 
 ![Show empty cart notification](docx/emptyCartNotification.gif)
 
+Order submission notification
 
-![](docx/takingOrder.gif)
+![Show order submission notification](docx/takingOrder.gif)
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+Owner SMS
+
+![(Show owner message)](docx/owner.PNG)
+
+Customer SMS
+
+![(Show client message)](docx/client.jpeg)
+
+Admin menu update
+
+![(Show update page)](docx/display.png)
+
+Admin analytics
+
+![(Show analytics page)](docx/analytics.png)
 
 
 Admin Updating Order Status
