@@ -26,13 +26,11 @@ Order submission notification
 
 ![Show order submission notification](docx/takingOrder.gif)
 
-Owner SMS
+Owner SMS & Customer SMS
 
-![(Show owner message)](docx/owner.PNG)
+<img src="docx/owner.PNG" alt="drawing" width="200"/>
 
-Customer SMS
-
-![(Show client message)](docx/client.jpeg)
+<img src="docx/client.jpeg" alt="drawing" width="200"/>
 
 Admin Updating Order Status
 
