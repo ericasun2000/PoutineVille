@@ -8,11 +8,22 @@ In the admin site, the owner can view analytics about the restaurant such as the
 
 ## Product
 
-![Show reponsive design](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+Responsive design
+![Responsive design](docx/responsive.gif)
+
+Intructions pop-up
 ![Show how-to-order modal](docx/showModal.gif)
+
+Empty cart notification
 ![Show empty cart notification](docx/emptyCartNotification.gif)
+
+
+![](docx/takingOrder.gif)
+
 ![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
-![bbq](public/assets/bbq.jpg)
+
+Admin Updating Order Status
+![Admin Updating Order Status](docx/order-status.gif)
 
 ## Contributors
 
