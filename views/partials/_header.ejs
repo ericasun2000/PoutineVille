@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/styles/owner.css" type="text/css" />
     <link rel="stylesheet" href="/styles/analytics.css" type="text/css" />
 
-      <!-- FontAwesome -->
+    <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/d18c482918.js" crossorigin="anonymous"></script>
 
     <!-- Favicon -->
@@ -44,17 +44,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link <%= typeof page !== 'undefined' && page === 'admin' ? 'selected-link' : ''%>" href="/admin">Order Status Form</a>
+                        <a class="nav-link <%= typeof page !== 'undefined' && page === 'admin' ? 'selected-link' : ''%>"
+                            href="/admin">Order Status Form</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <%= typeof page !== 'undefined' && page === 'display' ? 'selected-link' : ''%>" href="/admin/display">Display Dishes</a>
+                        <a class="nav-link <%= typeof page !== 'undefined' && page === 'display' ? 'selected-link' : ''%>"
+                            href="/admin/display">Display Dishes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <%= typeof page !== 'undefined' && page === 'analytics' ? 'selected-link' : ''%>" href="/admin/analytics">Analytics</a>
+                        <a class="nav-link <%= typeof page !== 'undefined' && page === 'addNewDish' ? 'selected-link' : ''%>"
+                            href="/admin/display/new">Add New Dish</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%= typeof page !== 'undefined' && page === 'analytics' ? 'selected-link' : ''%>"
+                            href="/admin/analytics">Analytics</a>
                     </li>
                     <li class="nav-item">
                         <form method="POST" action="/admin/logout">
-                            <a class="nav-link" href="#"><button type="submit" class="logout"><i class="fas fa-user"></i> Logout</button></a>
+                            <a class="nav-link" href="#"><button type="submit" class="logout"><i
+                                        class="fas fa-user"></i> Logout</button></a>
                         </form>
                     </li>
                 </ul>

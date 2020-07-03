@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, deleteDish, updateDish }) => {
+module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, deleteDish, updateDish, addNewDish }) => {
   router.get("/", (req, res) => {
     //if has cookie
     if (req.session.isAuthenticated) {
@@ -63,9 +63,9 @@ module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, dele
   router.get("/display", (req, res) => {
     if (req.session.isAuthenticated) {
       getDishes()
-      // .then(dishes => console.log(dishes[0].name))
+        // .then(dishes => console.log(dishes[0].name))
         .then(dishes => {
-          res.render("display", {dishes,  page: 'display' });
+          res.render("display", { dishes, page: 'display' });
         });
     } else {
       res.redirect("/admin");
@@ -76,7 +76,7 @@ module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, dele
     if (req.session.isAuthenticated) {
       const dishId = req.params.id;
       getDish(dishId)
-        .then(dish => res.render("edit", {dish}));
+        .then(dish => res.render("edit", { dish }));
     } else {
       res.redirect("/admin");
     }
@@ -99,6 +99,24 @@ module.exports = ({ getOrderedDishes, getSalesByMonths, getDishes, getDish, dele
     const dishId = req.params.id;
     if (req.session.isAuthenticated) {
       deleteDish(dishId)
+        .then(res.redirect("/admin/display"))
+        .catch(err => console.log(err));
+    } else {
+      res.redirect("/admin");
+    }
+  });
+
+  router.get("/display/new", (req, res) => {
+    if (req.session.isAuthenticated) {
+      res.render('addDish', { page: 'addNewDish' });
+    } else {
+      res.redirect("/admin");
+    }
+  });
+
+  router.post("/display", (req, res) => {
+    if (req.session.isAuthenticated) {
+      addNewDish(req.body.newDish)
         .then(res.redirect("/admin/display"))
         .catch(err => console.log(err));
     } else {
