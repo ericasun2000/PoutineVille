@@ -34,6 +34,10 @@ Customer SMS
 
 ![(Show client message)](docx/client.jpeg)
 
+Admin Updating Order Status
+
+![Admin Updating Order Status](docx/orderstatus.gif)
+
 Admin menu update
 
 ![(Show update page)](docx/display.png)
@@ -43,9 +47,7 @@ Admin analytics
 ![(Show analytics page)](docx/analytics.png)
 
 
-Admin Updating Order Status
 
-![Admin Updating Order Status](docx/order-status.gif)
 
 ## Contributors
 
