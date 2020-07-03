@@ -28,9 +28,10 @@ Order submission notification
 
 Owner SMS & Customer SMS
 
-<img src="docx/owner.PNG" alt="drawing" width="200"/>
-
-<img src="docx/client.jpeg" alt="drawing" width="200"/>
+<p>
+    <img src="docx/owner.PNG" alt="drawing" width="200"/>
+    <img src="docx/client.jpeg" alt="drawing" width="200"/>
+</p>
 
 Admin Updating Order Status
 
